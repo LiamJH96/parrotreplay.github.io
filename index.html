@@ -1,36 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parrot Replay – Coming Soon</title>
-    <style>
-        body {
-            background: #0e0e0e;
-            color: #00ffc6;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            color: #aaa;
-            font-size: 1.2rem;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Parrot Replay - Coming Soon</title>
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>🦜 Parrot Replay</h1>
-    <p>Coming Soon</p>
+  <header class="topbar">
+    <div class="brand">
+      <img src="favicon.png" alt="Parrot Replay logo" class="logo">
+      <div class="brand-text">
+        <h1>Parrot Replay</h1>
+        <div class="tag">By Mrkz</div>
+      </div>
+    </div>
+    <div class="status">
+      <div class="license">Licensed <span class="pill">PRO</span></div>
+      <div class="version">Version 1.0</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Capture, tweak and replay live audio snippets on the fly</h2>
+      <p class="lede">Parrot Replay is a low-latency audio utility aimed at streamers and gamers. Record short clips, apply pitch and speed transforms and replay them with hotkeys.</p>
+      <a class="cta" href="#setup">Setup Guide</a>
+    </section>
+
+    <section id="features" class="panel">
+      <h3>What it does</h3>
+      <ul class="features">
+        <li><strong>Record</strong> short live clips from your microphone or virtual audio cable</li>
+        <li><strong>Transform</strong> pitch, speed and reverse audio in real-time</li>
+        <li><strong>Hotkeys</strong> map clips to the numpad for instant recall</li>
+        <li><strong>Profiles &amp; Favourites</strong> save different setups and restore on launch</li>
+      </ul>
+    </section>
+
+    <section id="setup" class="panel">
+      <h3>Quick setup</h3>
+      <ol class="steps">
+        <li>Install <strong>VB-Audio Virtual Cable</strong> (Parrot uses virtual cables for passthrough).</li>
+        <li>Install the app and run once to allow drivers and permissions.</li>
+        <li>Open Parrot Replay, press <em>Rescan Devices</em> then <em>Start Engine</em>.</li>
+        <li>Map your hotkeys and test microphone passthrough using <em>Test Microphone</em>.</li>
+        <li>Visit the <strong>Preferences</strong> to enable startup/minimise to tray options.</li>
+      </ol>
+      <p class="note">If you run into audio device issues, check Windows sound settings and ensure VB-Audio cables are "Ready" and not disabled.</p>
+    </section>
+
+    <section class="panel">
+      <h3>Download & Support</h3>
+      <p>Get the latest builds and join the Discord for support, updates and beta access.</p>
+      <p class="links">
+        <a href="https://github.com/your-repo" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:support@parrotreplay.com">support@parrotreplay.com</a>
+        <a href="https://discord.gg/yourdiscord" target="_blank" rel="noopener">Discord</a>
+      </p>
+    </section>
+
+    <footer class="panel small">
+      <p>© 2025 Parrot Replay, All rights reserved. Coming soon.</p>
+    </footer>
+  </main>
 </body>
 </html>
