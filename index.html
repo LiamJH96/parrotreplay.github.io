@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrot Replay by Mrkz</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    // Smooth scroll for internal links
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+
+    // Modal handling
+    function openModal(id) {
+        document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">🦜 Parrot Replay</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#setup">Setup</a>
+                <a href="#download">Download</a>
+                <a href="#discord">Discord</a>
+                <a href="#legal">Legal</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Parrot Replay</h1>
+            <p>The Ultimate Voice Replay & Soundboard Tool</p>
+            <a href="#download" class="btn">Download Now</a>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <h2>Explore Features</h2>
+        <div class="features-grid">
+            <div class="feature" onclick="document.getElementById('engine').scrollIntoView({behavior: 'smooth'})">🎛 Engine Control</div>
+            <div class="feature" onclick="document.getElementById('hotkeys').scrollIntoView({behavior: 'smooth'})">⌨️ Hotkey System</div>
+            <div class="feature" onclick="document.getElementById('favourites').scrollIntoView({behavior: 'smooth'})">⭐ Favourites</div>
+            <div class="feature" onclick="document.getElementById('pitch').scrollIntoView({behavior: 'smooth'})">🎚 Pitch & Playback</div>
+            <div class="feature" onclick="document.getElementById('mic').scrollIntoView({behavior: 'smooth'})">🎧 Mic Passthrough</div>
+            <div class="feature" onclick="document.getElementById('trim').scrollIntoView({behavior: 'smooth'})">✂️ Trim Editor</div>
+            <div class="feature" onclick="document.getElementById('profiles').scrollIntoView({behavior: 'smooth'})">💾 Profiles</div>
+            <div class="feature" onclick="document.getElementById('settings').scrollIntoView({behavior: 'smooth'})">⚙️ Smart Settings</div>
+        </div>
+
+        <div class="feature-details">
+            <div id="engine"><h3>🎛 Engine Control</h3><p>Instantly start, stop, or restart the engine. Built for real-time capture and playback through VB-Audio Virtual Cable and the C+D pack, ensuring zero-delay audio replay.</p></div>
+            <div id="hotkeys"><h3>⌨️ Hotkey System</h3><p>Assign your preferred keys for recording, replaying, and saving audio clips. Optimised for NumPad layouts, with global listener support even when games are in focus.</p></div>
+            <div id="favourites"><h3>⭐ Favourites</h3><p>Save and manage up to ten of your most-used replays for quick access. Restore automatically on launch and clear anytime using “Unsave All”.</p></div>
+            <div id="pitch"><h3>🎚 Pitch & Playback</h3><p>Fine-tune playback with full control over pitch and speed. Perfect for creative memes or voice transformations on the fly.</p></div>
+            <div id="mic"><h3>🎧 Mic Passthrough</h3><p>Replay sounds directly through your mic channel in real-time. Great for in-game reactions or voice chat fun, toggled seamlessly within the app.</p></div>
+            <div id="trim"><h3>✂️ Trim Editor</h3><p>Use the integrated trim tool to cut silence or unwanted sections before saving or assigning clips to hotkeys.</p></div>
+            <div id="profiles"><h3>💾 Profiles</h3><p>Switch across multiple profiles for different games or moods. Each profile retains individual pitch, hotkey, and favourite settings.</p></div>
+            <div id="settings"><h3>⚙️ Smart Settings</h3><p>Customise auto-start, minimise-to-tray, and update-check options for a tailored user experience.</p></div>
+        </div>
+    </section>
+
+    <section id="setup" class="section dark">
+        <h2>Setup Guide</h2>
+        <div class="setup-steps">
+            <h3>Step 1: Install Required Audio Drivers</h3>
+            <p>Download and install both <strong>VB-Audio Virtual Cable</strong> and <strong>VB-Audio Cable C+D Pack</strong>. After installation, reboot your computer.</p>
+            
+            <h3>Step 2: Configure Audio</h3>
+            <p>Go to <strong>Control Panel → Sound → Recording tab</strong> and find <strong>Cable Output (VB-Audio CABLE D)</strong>. Right-click → Properties → “Listen” tab → check <strong>Listen to this device</strong>.</p>
+            
+            <h3>Step 3: Launch Parrot Replay</h3>
+            <p>Start the engine manually or enable “Start engine on startup.” Ensure both VB-Audio devices are visible in the device list.</p>
+
+            <h3>Step 4: Save Favourites</h3>
+            <p>Use number keys to assign favourite slots. You can enable “Auto-restore favourites on launch” to keep them loaded every session.</p>
+        </div>
+    </section>
+
+    <section id="download" class="section">
+        <h2>Download Parrot Replay</h2>
+        <p>Download the latest release for Windows (10 & 11 supported).</p>
+        <a href="#" class="btn">Download Placeholder</a>
+    </section>
+
+    <section id="discord" class="section dark">
+        <h2>Join the Community</h2>
+        <p>Join our Discord for support, updates, and user clips.</p>
+        <a href="#" class="btn discord-btn">Join Discord</a>
+    </section>
+
+    <section id="legal" class="section">
+        <h2>Legal & Privacy</h2>
+        <p>Parrot Replay is developed and owned by Mrkz. All rights reserved.</p>
+        <button class="btn" onclick="openModal('eulaModal')">View EULA</button>
+        <button class="btn" onclick="openModal('privacyModal')">View Privacy Policy</button>
+    </section>
+
+    <footer>
+        <p>© 2025 Parrot Replay by Mrkz. All rights reserved.</p>
+    </footer>
+
+    <!-- EULA Modal -->
+    <div id="eulaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('eulaModal')">&times;</span>
+            <h2>End-User Licence Agreement</h2>
+            <pre>for Parrot Replay Software
+Version 1.0 – Effective Date: 24 October 2025
+
+This End-User Licence Agreement (“Agreement”) governs your use of Parrot Replay (“the Software”), developed and distributed by Parrot Replay Software (“the Developer”).
+By installing, copying, or using the Software, you agree to all terms below.
+If you do not agree, do not install or use the Software.
+
+
+1. Licence Grant
+
+The Developer grants you a limited, non-exclusive, non-transferable licence to install and use one copy of the Software on a single personal computer for lawful personal or commercial use.
+Ownership of the Software remains with the Developer.
+
+
+2. Ownership and Restrictions
+
+The Software, source code, design, graphics, and documentation remain the exclusive property of the Developer.
+
+You may not:
+
+Modify, reverse-engineer, decompile, or disassemble the Software.
+
+Sell, rent, lease, redistribute, or share the Software or any licence key.
+
+Remove or alter copyright, trademark, or attribution notices.
+
+Use the Software for any unlawful or prohibited purpose.
+
+Use of the Software is entirely at your own risk. You are solely responsible for compliance with all applicable laws and platform terms.
+
+
+3. Recording and Consent Responsibilities
+
+The Software may record, replay, and process in-game or online voice-chat audio.
+You are solely responsible for ensuring compliance with all applicable recording, privacy, and data-protection laws and any game or platform terms of service.
+
+You must not record, edit, or distribute another person’s voice without consent where required by law.
+The Developer makes no representation that such actions are lawful in your jurisdiction.
+
+
+4. Misuse and Consequences
+
+The Developer is not responsible for misuse of the Software, including but not limited to:
+
+Offensive, harassing, defamatory, or unlawful playback,
+
+Violations of game or platform rules, or
+
+Account bans, suspensions, or penalties.
+
+You accept full liability for all consequences of your conduct and agree to use the Software responsibly and respectfully.
+
+
+5. Third-Party Software Dependencies
+
+The Software relies on third-party audio-routing components developed by VB-Audio Software to function properly. These include:
+
+VB-Audio Virtual Cable (Free)
+
+VB-Audio CABLE C+D Pack (“Donationware” – minimum donation required on the official site)
+
+Users are presented with two download options for the CABLE C+D driver:
+
+Official VB-Audio Download (Minimum Donation Required) – strongly recommended, as it supports the original VB-Audio developer and ensures access to the latest verified version.
+
+Community Archive (Free) – a public, community-maintained mirror hosted on Archive.org for users unable to contribute.
+
+Important Notice:
+
+Parrot Replay does not host, modify, or redistribute VB-Audio software.
+
+The Archive.org link is provided for informational accessibility only.
+
+The Developer assumes no responsibility for the legality, accuracy, or availability of third-party links.
+
+All rights to VB-Audio products remain with VB-Audio Software.
+
+
+6. Activation and Hardware Identification
+
+To activate the Software, a hardware ID is generated locally from system components and converted into a secure hash.
+This identifier cannot be reversed to reveal underlying hardware information and is used only to generate and validate licence keys.
+
+If your hardware changes significantly (for example, replacing your motherboard), your licence may become invalid and require reactivation. Replacement licences are granted at the Developer’s discretion.
+
+Hardware identifiers and licence requests may be voluntarily shared by the user through external platforms such as Discord for activation purposes.
+These communications are subject to those platforms’ privacy policies, and the Developer assumes no responsibility for their data handling.
+
+The activation process itself is entirely offline.
+
+
+7. Data Protection and Privacy
+
+The Software does not collect, transmit, or store any personal data.
+All configuration and licence data remain local to your computer.
+No telemetry, analytics, or remote monitoring are included.
+
+
+8. Updates and Modifications
+
+The Developer may release updates or improvements at any time.
+A future version may include an optional update-check feature that only requests public version information from an official Parrot Replay distribution page (for example, a verified website or software repository).
+This feature will never transmit personal or system data.
+
+Continued use after updates constitutes acceptance of revised terms.
+
+
+9. Disclaimer of Warranties
+
+The Software is provided “as is”, without warranty of any kind, express or implied, including merchantability, fitness for a particular purpose, or non-infringement.
+You assume all risk regarding quality and performance.
+
+
+10. Limitation of Liability
+
+To the fullest extent permitted by law, the Developer shall not be liable for any direct, indirect, incidental, consequential, or special damages, including loss of data, profits, or account access, even if advised of such possibilities.
+
+
+11. Termination
+
+This Agreement remains effective until terminated.
+It terminates automatically if you breach any term.
+Upon termination, you must uninstall and delete all copies.
+
+Because activation is offline, licences cannot be revoked remotely; continued use after a breach constitutes unauthorised use.
+
+
+12. No Endorsement or Affiliation
+
+Parrot Replay is an independent product, not affiliated with or endorsed by any game developer, publisher, or platform provider.
+All trademarks belong to their respective owners.
+
+
+13. Verification and Authenticity
+
+Official releases are published solely by Parrot Replay Software.
+Verify authenticity using provided hashes.
+Any modified or repackaged versions are unauthorised and unsupported.
+
+
+14. Governing Law
+
+This Agreement is governed by and construed under the laws of the United Kingdom.
+All disputes shall be resolved exclusively in the courts of the United Kingdom.
+
+
+15. Entire Agreement and Severability
+
+This document constitutes the entire agreement between you and the Developer.
+If any provision is held invalid, the remaining terms remain in effect.
+
+
+16. Ethical Use Reminder
+
+Parrot Replay is designed for entertainment and creative use.
+Please use it responsibly, respectfully, and within the law.
+
+
+17. Acknowledgment
+
+By installing or using the Software, you confirm that you have read, understood, and agreed to this Agreement.
+
+© 2025 Parrot Replay Software. All rights reserved.</pre>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Privacy Policy</h2>
+            <pre>Privacy Policy for Parrot Replay
+
+Version 1.0 – Effective Date: 24 October 2025
+Developer: Parrot Replay Software
+
+1. Introduction
+
+Parrot Replay operates entirely offline and is built with privacy in mind.
+It does not automatically transmit personal information to the Developer or any third party.
+Some limited system information is processed locally to generate and verify licence activation.
+
+By using the Software, you agree to this Privacy Policy.
+
+
+2. Data Collection and Processing
+
+The Software performs no telemetry, analytics, or background data collection.
+
+When you request a licence, a local licence-request file is generated containing:
+
+A one-way SHA-256-hashed hardware identifier,
+
+Your computer name,
+
+Your operating-system name, and
+
+The date and time of generation.
+
+This information is shown on-screen and is only shared manually if you choose to send it to the Developer.
+
+If you send your licence request through Discord or another platform, that communication is subject to the respective platform’s privacy policy.
+The Developer may retain the message (including the hashed hardware ID) inside Discord solely for verification, anti-abuse, and reissue purposes.
+It is never exported, resold, or used outside Discord, and may be deleted upon request.
+
+Once a licence is issued, the Developer does not otherwise store or reuse request data.
+
+
+3. Audio Recordings
+
+All recordings remain stored locally on your device.
+You control creation, deletion, and sharing.
+The Developer has no access to your recordings and bears no responsibility for their content or distribution.
+
+
+4. Third-Party Software
+
+Parrot Replay interfaces with third-party audio-routing utilities from VB-Audio Software, including:
+
+VB-Audio Virtual Cable (Free)
+
+VB-Audio CABLE C+D Pack (Donationware – minimum donation required on the official site)
+
+Users may choose between:
+
+Official VB-Audio Download (Minimum Donation Required) – strongly recommended to support the VB-Audio developer, or
+
+Community Archive (Free) – a community-maintained mirror on Archive.org.
+
+Parrot Replay does not host or control these downloads and is not responsible for their privacy practices.
+
+
+5. Data Security
+
+No user or hardware data ever leaves your computer automatically.
+Licence files and recordings are stored locally.
+
+If a future version includes an optional update-check, it will contact only an official Parrot Replay distribution page (such as a verified website or repository) to compare version numbers.
+No personal or system data will be transmitted.
+
+
+6. Children’s Privacy
+
+The Software is not intended for children under 13 and intentionally collects no data from them.
+
+
+7. Policy Updates
+
+This Privacy Policy may be updated periodically.
+The latest version will always ship with the Software.
+Continued use after updates constitutes acceptance of the revised terms.
+
+
+8. Summary
+
+Licence requests use local-only hashed system data.
+
+No telemetry or background collection.
+
+No automatic transmission or cloud storage.
+
+Recordings remain entirely under user control.
+
+Developer retains licence data only if voluntarily provided via Discord.
+
+
+© 2025 Parrot Replay Software. All rights reserved.</pre>
+        </div>
+    </div>
+</body>
+</html>
