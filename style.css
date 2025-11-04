@@ -1,131 +1,25 @@
 
-body {
-    margin: 0;
-    font-family: 'Bahnschrift', 'Segoe UI', sans-serif;
-    background-color: #0b0b0b;
-    color: #e0e0e0;
-    scroll-behavior: smooth;
-}
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #111;
-    border-bottom: 2px solid #00ff66;
-    z-index: 1000;
-}
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 40px;
-}
-.nav-container .logo {
-    font-size: 1.3rem;
-    color: #00ff66;
-    font-weight: bold;
-}
-nav a {
-    color: #e0e0e0;
-    text-decoration: none;
-    margin: 0 12px;
-    transition: 0.3s;
-}
-nav a:hover {
-    color: #00ff66;
-    text-shadow: 0 0 8px #00ff66;
-}
-.hero {
-    height: 100vh;
-    background: radial-gradient(circle at center, #0f0f0f 0%, #050505 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 80px;
-}
-.hero h1 { color: #00ff66; font-size: 3rem; margin-bottom: 10px; }
-.hero p { font-size: 1.2rem; margin-bottom: 20px; }
-.btn {
-    background-color: #00ff66;
-    color: #000;
-    padding: 10px 24px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-.btn:hover { background-color: #00cc55; box-shadow: 0 0 12px #00ff66; }
-.section { padding: 100px 60px; text-align: center; }
-.section.dark { background-color: #121212; }
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-.feature {
-    background: #1a1a1a;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #00ff6620;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.feature:hover {
-    border-color: #00ff66;
-    box-shadow: 0 0 10px #00ff6630;
-}
-.feature-details {
-    margin-top: 80px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-}
-.feature-details h3 { color: #00ff66; }
-.setup-steps { max-width: 800px; margin: auto; text-align: left; line-height: 1.6; }
-.discord-btn { background-color: #5865F2; color: white; }
-footer {
-    text-align: center;
-    padding: 30px;
-    background-color: #0b0b0b;
-    border-top: 1px solid #00ff6620;
-    color: #777;
-    font-size: 0.9rem;
-}
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    justify-content: center; align-items: center;
-}
-.modal-content {
-    background: #111;
-    border: 2px solid #00ff66;
-    color: #e0e0e0;
-    padding: 20px;
-    width: 80%;
-    height: 80%;
-    overflow-y: auto;
-    border-radius: 8px;
-    position: relative;
-}
-.modal-content pre {
-    white-space: pre-wrap;
-    font-size: 0.85rem;
-    line-height: 1.4;
-}
-.close {
-    position: absolute;
-    top: 10px; right: 20px;
-    font-size: 1.5rem;
-    color: #00ff66;
-    cursor: pointer;
-}
+body {margin:0;font-family:'Bahnschrift','Segoe UI',sans-serif;background:#0b0b0b;color:#e0e0e0;scroll-behavior:smooth;}
+header{position:fixed;top:0;left:0;right:0;background:#111;border-bottom:2px solid #00ff66;z-index:1000;}
+.nav-container{display:flex;align-items:center;justify-content:space-between;padding:12px 40px;}
+.logo-text{font-size:1.3rem;color:#00ff66;font-weight:bold;}
+nav a{color:#e0e0e0;text-decoration:none;margin:0 12px;transition:0.3s;}
+nav a:hover{color:#00ff66;text-shadow:0 0 8px #00ff66;}
+.hero{height:100vh;background:radial-gradient(circle at center,#0f0f0f 0%,#050505 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-top:80px;}
+.hero-logo{width:240px;margin-bottom:20px;filter:drop-shadow(0 0 8px #00ff66);}
+.hero h1{color:#00ff66;font-size:3rem;margin:10px 0;}
+.hero p{font-size:1.2rem;margin-bottom:20px;}
+.btn{background:#00ff66;color:#000;padding:10px 24px;border-radius:4px;text-decoration:none;font-weight:bold;transition:0.3s;cursor:pointer;}
+.btn:hover{background:#00cc55;box-shadow:0 0 12px #00ff66;}
+.section{padding:100px 60px;text-align:center;}
+.section.dark{background:#121212;}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:40px;}
+.feature{background:#1a1a1a;padding:20px;border-radius:8px;border:1px solid #00ff6620;cursor:pointer;transition:0.3s;}
+.feature:hover{border-color:#00ff66;box-shadow:0 0 10px #00ff6630;}
+.setup-steps{max-width:800px;margin:auto;text-align:left;line-height:1.6;}
+.discord-btn{background-color:#5865F2;color:white;}
+footer{text-align:center;padding:30px;background:#0b0b0b;border-top:1px solid #00ff6620;color:#777;font-size:0.9rem;}
+.modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;}
+.modal-content{background:#111;border:2px solid #00ff66;color:#e0e0e0;padding:20px;width:80%;height:80%;overflow-y:auto;border-radius:8px;position:relative;box-shadow:0 0 15px #00ff6630;}
+.modal-content pre{white-space:pre-wrap;font-size:0.85rem;line-height:1.4;}
+.close{position:absolute;top:10px;right:20px;font-size:1.5rem;color:#00ff66;cursor:pointer;}

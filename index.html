@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parrot Replay by Mrkz</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <script>
-    // Smooth scroll for internal links
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -17,20 +17,14 @@
             });
         });
     });
-
-    // Modal handling
-    function openModal(id) {
-        document.getElementById(id).style.display = 'flex';
-    }
-    function closeModal(id) {
-        document.getElementById(id).style.display = 'none';
-    }
+    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
     </script>
 </head>
 <body>
     <header>
         <div class="nav-container">
-            <div class="logo">🦜 Parrot Replay</div>
+            <div class="logo-text">🦜 Parrot Replay</div>
             <nav>
                 <a href="#home">Home</a>
                 <a href="#features">Features</a>
@@ -43,11 +37,10 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Parrot Replay</h1>
-            <p>The Ultimate Voice Replay & Soundboard Tool</p>
-            <a href="#download" class="btn">Download Now</a>
-        </div>
+        <img src="assets/logo.png" alt="Parrot Replay Logo" class="hero-logo">
+        <h1>Parrot Replay</h1>
+        <p>The Ultimate Voice Replay & Soundboard Tool</p>
+        <a href="#download" class="btn">Download Now</a>
     </section>
 
     <section id="features" class="section">
@@ -62,51 +55,33 @@
             <div class="feature" onclick="document.getElementById('profiles').scrollIntoView({behavior: 'smooth'})">💾 Profiles</div>
             <div class="feature" onclick="document.getElementById('settings').scrollIntoView({behavior: 'smooth'})">⚙️ Smart Settings</div>
         </div>
-
-        <div class="feature-details">
-            <div id="engine"><h3>🎛 Engine Control</h3><p>Instantly start, stop, or restart the engine. Built for real-time capture and playback through VB-Audio Virtual Cable and the C+D pack, ensuring zero-delay audio replay.</p></div>
-            <div id="hotkeys"><h3>⌨️ Hotkey System</h3><p>Assign your preferred keys for recording, replaying, and saving audio clips. Optimised for NumPad layouts, with global listener support even when games are in focus.</p></div>
-            <div id="favourites"><h3>⭐ Favourites</h3><p>Save and manage up to ten of your most-used replays for quick access. Restore automatically on launch and clear anytime using “Unsave All”.</p></div>
-            <div id="pitch"><h3>🎚 Pitch & Playback</h3><p>Fine-tune playback with full control over pitch and speed. Perfect for creative memes or voice transformations on the fly.</p></div>
-            <div id="mic"><h3>🎧 Mic Passthrough</h3><p>Replay sounds directly through your mic channel in real-time. Great for in-game reactions or voice chat fun, toggled seamlessly within the app.</p></div>
-            <div id="trim"><h3>✂️ Trim Editor</h3><p>Use the integrated trim tool to cut silence or unwanted sections before saving or assigning clips to hotkeys.</p></div>
-            <div id="profiles"><h3>💾 Profiles</h3><p>Switch across multiple profiles for different games or moods. Each profile retains individual pitch, hotkey, and favourite settings.</p></div>
-            <div id="settings"><h3>⚙️ Smart Settings</h3><p>Customise auto-start, minimise-to-tray, and update-check options for a tailored user experience.</p></div>
-        </div>
     </section>
 
     <section id="setup" class="section dark">
         <h2>Setup Guide</h2>
         <div class="setup-steps">
-            <h3>Step 1: Install Required Audio Drivers</h3>
-            <p>Download and install both <strong>VB-Audio Virtual Cable</strong> and <strong>VB-Audio Cable C+D Pack</strong>. After installation, reboot your computer.</p>
-            
-            <h3>Step 2: Configure Audio</h3>
-            <p>Go to <strong>Control Panel → Sound → Recording tab</strong> and find <strong>Cable Output (VB-Audio CABLE D)</strong>. Right-click → Properties → “Listen” tab → check <strong>Listen to this device</strong>.</p>
-            
-            <h3>Step 3: Launch Parrot Replay</h3>
-            <p>Start the engine manually or enable “Start engine on startup.” Ensure both VB-Audio devices are visible in the device list.</p>
-
-            <h3>Step 4: Save Favourites</h3>
-            <p>Use number keys to assign favourite slots. You can enable “Auto-restore favourites on launch” to keep them loaded every session.</p>
+            <p><strong>Step 1:</strong> Install VB-Audio Virtual Cable and VB-Audio Cable C+D Pack, then reboot.</p>
+            <p><strong>Step 2:</strong> In Control Panel → Sound → Recording, open Cable Output (CABLE D) → Listen → enable “Listen to this device”.</p>
+            <p><strong>Step 3:</strong> Launch Parrot Replay and confirm both VB-Audio devices appear under System Status.</p>
+            <p><strong>Step 4:</strong> Use hotkeys to record and playback. Save favourites for instant recall.</p>
         </div>
     </section>
 
     <section id="download" class="section">
         <h2>Download Parrot Replay</h2>
-        <p>Download the latest release for Windows (10 & 11 supported).</p>
+        <p>Download the latest version for Windows (10 & 11 supported).</p>
         <a href="#" class="btn">Download Placeholder</a>
     </section>
 
     <section id="discord" class="section dark">
         <h2>Join the Community</h2>
-        <p>Join our Discord for support, updates, and user clips.</p>
+        <p>Get support, share ideas, and connect with other users.</p>
         <a href="#" class="btn discord-btn">Join Discord</a>
     </section>
 
     <section id="legal" class="section">
         <h2>Legal & Privacy</h2>
-        <p>Parrot Replay is developed and owned by Mrkz. All rights reserved.</p>
+        <p>Click below to view our policies.</p>
         <button class="btn" onclick="openModal('eulaModal')">View EULA</button>
         <button class="btn" onclick="openModal('privacyModal')">View Privacy Policy</button>
     </section>
