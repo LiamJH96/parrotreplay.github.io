@@ -1,101 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parrot Replay by Mrkz</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parrot Replay by Mrkz</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="logo.png">
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
         });
     });
-    function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-    function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-    </script>
+    window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeAllModals();
+    });
+});
+function openModal(id) {
+    const m = document.getElementById(id);
+    m.style.display = 'flex';
+    setTimeout(() => {
+        document.addEventListener('click', outsideClick);
+    }, 50);
+}
+function closeModal(id) {
+    const m = document.getElementById(id);
+    m.style.display = 'none';
+    document.removeEventListener('click', outsideClick);
+}
+function closeAllModals() {
+    document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+}
+function outsideClick(e) {
+    document.querySelectorAll('.modal-content').forEach(box => {
+        if (!box.contains(e.target)) closeAllModals();
+    });
+}
+</script>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
-            <div class="logo-text">🦜 Parrot Replay</div>
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#features">Features</a>
-                <a href="#setup">Setup</a>
-                <a href="#download">Download</a>
-                <a href="#discord">Discord</a>
-                <a href="#legal">Legal</a>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="nav-container">
+        <div class="logo-text">🦜 Parrot Replay</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#setup">Setup</a>
+            <a href="#download">Download</a>
+            <a href="#discord">Discord</a>
+            <a href="#legal">Legal</a>
+        </nav>
+    </div>
+</header>
 
-    <section id="home" class="hero">
-        <img src="assets/logo.png" alt="Parrot Replay Logo" class="hero-logo">
-        <h1>Parrot Replay</h1>
-        <p>The Ultimate Voice Replay & Soundboard Tool</p>
-        <a href="#download" class="btn">Download Now</a>
-    </section>
+<section id="home" class="hero">
+    <img src="logo.png" alt="Parrot Replay Logo" class="hero-logo">
+    <h1>Parrot Replay</h1>
+    <p>The Ultimate Voice Replay & Soundboard Tool</p>
+    <a href="#download" class="btn big">Download Now</a>
+</section>
 
-    <section id="features" class="section">
-        <h2>Explore Features</h2>
-        <div class="features-grid">
-            <div class="feature" onclick="document.getElementById('engine').scrollIntoView({behavior: 'smooth'})">🎛 Engine Control</div>
-            <div class="feature" onclick="document.getElementById('hotkeys').scrollIntoView({behavior: 'smooth'})">⌨️ Hotkey System</div>
-            <div class="feature" onclick="document.getElementById('favourites').scrollIntoView({behavior: 'smooth'})">⭐ Favourites</div>
-            <div class="feature" onclick="document.getElementById('pitch').scrollIntoView({behavior: 'smooth'})">🎚 Pitch & Playback</div>
-            <div class="feature" onclick="document.getElementById('mic').scrollIntoView({behavior: 'smooth'})">🎧 Mic Passthrough</div>
-            <div class="feature" onclick="document.getElementById('trim').scrollIntoView({behavior: 'smooth'})">✂️ Trim Editor</div>
-            <div class="feature" onclick="document.getElementById('profiles').scrollIntoView({behavior: 'smooth'})">💾 Profiles</div>
-            <div class="feature" onclick="document.getElementById('settings').scrollIntoView({behavior: 'smooth'})">⚙️ Smart Settings</div>
-        </div>
-    </section>
+<section id="features" class="section">
+    <h2>Explore Features</h2>
+    <div class="features-grid">
+        <div class="feature" onclick="document.getElementById('engine').scrollIntoView({behavior:'smooth'})">🎛 Engine Control</div>
+        <div class="feature" onclick="document.getElementById('hotkeys').scrollIntoView({behavior:'smooth'})">⌨️ Hotkey System</div>
+        <div class="feature" onclick="document.getElementById('favourites').scrollIntoView({behavior:'smooth'})">⭐ Favourites</div>
+        <div class="feature" onclick="document.getElementById('pitch').scrollIntoView({behavior:'smooth'})">🎚 Pitch & Playback</div>
+        <div class="feature" onclick="document.getElementById('mic').scrollIntoView({behavior:'smooth'})">🎧 Mic Passthrough</div>
+        <div class="feature" onclick="document.getElementById('trim').scrollIntoView({behavior:'smooth'})">✂️ Trim Editor</div>
+        <div class="feature" onclick="document.getElementById('profiles').scrollIntoView({behavior:'smooth'})">💾 Profiles</div>
+        <div class="feature" onclick="document.getElementById('settings').scrollIntoView({behavior:'smooth'})">⚙️ Smart Settings</div>
+    </div>
+</section>
 
-    <section id="setup" class="section dark">
-        <h2>Setup Guide</h2>
-        <div class="setup-steps">
-            <p><strong>Step 1:</strong> Install VB-Audio Virtual Cable and VB-Audio Cable C+D Pack, then reboot.</p>
-            <p><strong>Step 2:</strong> In Control Panel → Sound → Recording, open Cable Output (CABLE D) → Listen → enable “Listen to this device”.</p>
-            <p><strong>Step 3:</strong> Launch Parrot Replay and confirm both VB-Audio devices appear under System Status.</p>
-            <p><strong>Step 4:</strong> Use hotkeys to record and playback. Save favourites for instant recall.</p>
-        </div>
-    </section>
+<section id="setup" class="section dark">
+    <h2>Setup Guide</h2>
+    <div class="setup-steps">
+        <p><strong>Step 1:</strong> Install VB-Audio Virtual Cable and VB-Audio Cable C+D Pack, then reboot.</p>
+        <p><strong>Step 2:</strong> In Control Panel → Sound → Recording, open Cable Output (CABLE D) → Listen → enable “Listen to this device”.</p>
+        <p><strong>Step 3:</strong> Launch Parrot Replay and confirm both VB-Audio devices appear under System Status.</p>
+        <p><strong>Step 4:</strong> Use hotkeys to record and playback. Save favourites for instant recall.</p>
+    </div>
+</section>
 
-    <section id="download" class="section">
-        <h2>Download Parrot Replay</h2>
-        <p>Download the latest version for Windows (10 & 11 supported).</p>
-        <a href="#" class="btn">Download Placeholder</a>
-    </section>
+<section id="download" class="section">
+    <h2>Download Parrot Replay</h2>
+    <p>Download the latest version for Windows (10 & 11 supported).</p>
+    <a href="#" class="btn big">Download Placeholder</a>
+</section>
 
-    <section id="discord" class="section dark">
-        <h2>Join the Community</h2>
-        <p>Get support, share ideas, and connect with other users.</p>
-        <a href="#" class="btn discord-btn">Join Discord</a>
-    </section>
+<section id="discord" class="section dark">
+    <h2>Join the Community</h2>
+    <p>Get support, share ideas, and connect with other users.</p>
+    <a href="#" class="btn discord-btn">Join Discord</a>
+</section>
 
-    <section id="legal" class="section">
-        <h2>Legal & Privacy</h2>
-        <p>Click below to view our policies.</p>
-        <button class="btn" onclick="openModal('eulaModal')">View EULA</button>
-        <button class="btn" onclick="openModal('privacyModal')">View Privacy Policy</button>
-    </section>
+<section id="legal" class="section">
+    <h2>Legal & Privacy</h2>
+    <p>Click below to view our policies.</p>
+    <button class="btn" onclick="openModal('eulaModal')">View EULA</button>
+    <button class="btn" onclick="openModal('privacyModal')">View Privacy Policy</button>
+</section>
 
-    <footer>
-        <p>© 2025 Parrot Replay by Mrkz. All rights reserved.</p>
-    </footer>
+<footer>
+    <p>© 2025 Parrot Replay by Mrkz. All rights reserved.</p>
+</footer>
 
-    <!-- EULA Modal -->
-    <div id="eulaModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('eulaModal')">&times;</span>
-            <h2>End-User Licence Agreement</h2>
-            <pre>for Parrot Replay Software
+<div id="eulaModal" class="modal">
+    <div class="modal-content small">
+        <span class="close" onclick="closeModal('eulaModal')">&times;</span>
+        <h2>End-User Licence Agreement</h2>
+        <pre>for Parrot Replay Software
 Version 1.0 – Effective Date: 24 October 2025
 
 This End-User Licence Agreement (“Agreement”) governs your use of Parrot Replay (“the Software”), developed and distributed by Parrot Replay Software (“the Developer”).
@@ -258,15 +276,14 @@ Please use it responsibly, respectfully, and within the law.
 By installing or using the Software, you confirm that you have read, understood, and agreed to this Agreement.
 
 © 2025 Parrot Replay Software. All rights reserved.</pre>
-        </div>
     </div>
+</div>
 
-    <!-- Privacy Modal -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('privacyModal')">&times;</span>
-            <h2>Privacy Policy</h2>
-            <pre>Privacy Policy for Parrot Replay
+<div id="privacyModal" class="modal">
+    <div class="modal-content small">
+        <span class="close" onclick="closeModal('privacyModal')">&times;</span>
+        <h2>Privacy Policy</h2>
+        <pre>Privacy Policy for Parrot Replay
 
 Version 1.0 – Effective Date: 24 October 2025
 Developer: Parrot Replay Software
@@ -362,7 +379,7 @@ Developer retains licence data only if voluntarily provided via Discord.
 
 
 © 2025 Parrot Replay Software. All rights reserved.</pre>
-        </div>
     </div>
+</div>
 </body>
 </html>
