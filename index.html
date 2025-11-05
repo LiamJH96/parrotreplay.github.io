@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parrot Replay - Ultimate Voice Replay & Audio Control</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="parrot.ico">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🦜</span>
+                <span class="brand-text">Parrot Replay</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#setup" class="nav-link">Setup</a>
+                <a href="#download" class="nav-link nav-link-cta">Download</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="neon-glow glow-1"></div>
+            <div class="neon-glow glow-2"></div>
+            <div class="neon-glow glow-3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-down">
+                <span class="badge-icon">⚡</span>
+                <span>Windows 10 & 11 • Low Latency • Offline</span>
+            </div>
+            
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                The Ultimate
+                <span class="gradient-text">Voice Replay</span>
+                & Audio Control System
+            </h1>
+            
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Professional-grade audio capture with instant replay, pitch shifting, and advanced effects. 
+                Perfect for gaming, content creation, and entertainment.
+            </p>
+            
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                <a href="#download" class="btn btn-primary btn-lg">
+                    <span class="btn-icon">⬇</span>
+                    Download Now
+                </a>
+                <a href="#features" class="btn btn-secondary btn-lg">
+                    <span class="btn-icon">✨</span>
+                    Explore Features
+                </a>
+            </div>
+            
+            <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat">
+                    <div class="stat-value">< 50ms</div>
+                    <div class="stat-label">Latency</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">9</div>
+                    <div class="stat-label">Profiles</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Offline</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="500">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section" id="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Powerful Features</span>
+                <h2 class="section-title">Everything You Need for <span class="gradient-text">Audio Mastery</span></h2>
+                <p class="section-subtitle">Professional-grade tools designed for creators, gamers, and audio enthusiasts</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">🎙️</div>
+                    <h3 class="feature-title">Low-Latency Capture</h3>
+                    <p class="feature-description">Record audio with sub-50ms latency. Capture the last 10-60 seconds instantly with configurable buffer size.</p>
+                    <ul class="feature-list">
+                        <li>Adjustable buffer length</li>
+                        <li>Crystal-clear 48kHz/16-bit quality</li>
+                        <li>Hotkey-triggered capture</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">🎚️</div>
+                    <h3 class="feature-title">Advanced Pitch Control</h3>
+                    <p class="feature-description">Real-time pitch shifting from -12 to +12 semitones. Create hilarious or dramatic voice effects instantly.</p>
+                    <ul class="feature-list">
+                        <li>Smooth pitch adjustment</li>
+                        <li>Reverse playback mode</li>
+                        <li>Speed control (0.5x - 2.0x)</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">Favourites System</h3>
+                    <p class="feature-description">Save your best clips for instant recall. NumPad-style interface with 9 quick-access slots per profile.</p>
+                    <ul class="feature-list">
+                        <li>One-click save & restore</li>
+                        <li>Persistent storage</li>
+                        <li>Visual preview system</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">✂️</div>
+                    <h3 class="feature-title">Professional Trim Editor</h3>
+                    <p class="feature-description">Frame-accurate trimming with waveform visualization. Smooth 33 FPS playback cursor for precise editing.</p>
+                    <ul class="feature-list">
+                        <li>Visual waveform display</li>
+                        <li>Precise selection controls</li>
+                        <li>Non-destructive editing</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">💾</div>
+                    <h3 class="feature-title">Multi-Profile System</h3>
+                    <p class="feature-description">Standard: 3 profiles. PRO: 9 profiles total. Organize clips by game, purpose, or style with full import/export.</p>
+                    <ul class="feature-list">
+                        <li>Instant profile switching</li>
+                        <li>Independent settings per profile</li>
+                        <li>Backup & share profiles (PRO)</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">⌨️</div>
+                    <h3 class="feature-title">Customizable Hotkeys</h3>
+                    <p class="feature-description">Full hotkey customization for any keyboard layout. Default NumPad setup with TKL-friendly alternatives.</p>
+                    <ul class="feature-list">
+                        <li>Visual hotkey editor</li>
+                        <li>Conflict detection</li>
+                        <li>Live key capture</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 7 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="feature-icon">🎧</div>
+                    <h3 class="feature-title">Microphone Passthrough</h3>
+                    <p class="feature-description">Real-time mic monitoring with adjustable volume. Perfect for Discord, game chat, or streaming.</p>
+                    <ul class="feature-list">
+                        <li>Zero-latency monitoring</li>
+                        <li>Volume control slider</li>
+                        <li>Toggle on/off instantly</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 8 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Real-Time Stats</h3>
+                    <p class="feature-description">Monitor engine performance with live CPU usage, session statistics, and uptime tracking.</p>
+                    <ul class="feature-list">
+                        <li>Engine & GUI metrics</li>
+                        <li>Session clip counters</li>
+                        <li>Performance monitoring</li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 9 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="900">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-description">100% offline operation. No telemetry, no cloud, no tracking. Your audio stays on your machine.</p>
+                    <ul class="feature-list">
+                        <li>No internet required</li>
+                        <li>Local storage only</li>
+                        <li>Hardware-locked licensing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Simple Process</span>
+                <h2 class="section-title">How <span class="gradient-text">Parrot Replay</span> Works</h2>
+                <p class="section-subtitle">Professional audio routing made simple with VB-Audio Virtual Cable</p>
+            </div>
+            
+            <div class="how-grid">
+                <div class="how-step" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Continuous Buffer Recording</h3>
+                        <p>Parrot Replay constantly records audio into a circular buffer (10-60 seconds). When you hit the capture hotkey, it instantly saves what just happened.</p>
+                    </div>
+                </div>
+                
+                <div class="how-step" data-aos="fade-right" data-aos-delay="200">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Instant Processing</h3>
+                        <p>Apply pitch shifts, speed changes, or reverse effects in real-time. Trim your clip to perfection with the visual waveform editor.</p>
+                    </div>
+                </div>
+                
+                <div class="how-step" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Playback & Routing</h3>
+                        <p>Play clips through VB-Audio Virtual Cable to your game, Discord, or any application. Or use local playback to preview privately.</p>
+                    </div>
+                </div>
+                
+                <div class="how-step" data-aos="fade-right" data-aos-delay="400">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Save Favourites</h3>
+                        <p>Love that clip? Save it to a favourite slot for instant recall. Organize across 9 profiles (PRO) for unlimited possibilities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="audio-routing-diagram" data-aos="fade-up" data-aos-delay="500">
+                <h3 class="diagram-title">Audio Routing Architecture</h3>
+                <div class="routing-flow">
+                    <div class="routing-node">
+                        <div class="node-icon">🎤</div>
+                        <div class="node-label">Your Mic</div>
+                    </div>
+                    <div class="routing-arrow">→</div>
+                    <div class="routing-node highlight">
+                        <div class="node-icon">🦜</div>
+                        <div class="node-label">Parrot Replay</div>
+                    </div>
+                    <div class="routing-arrow">→</div>
+                    <div class="routing-node">
+                        <div class="node-icon">🔊</div>
+                        <div class="node-label">VB-Cable</div>
+                    </div>
+                    <div class="routing-arrow">→</div>
+                    <div class="routing-node">
+                        <div class="node-icon">🎮</div>
+                        <div class="node-label">Game/Discord</div>
+                    </div>
+                </div>
+                <p class="routing-note">Requires VB-Audio Virtual Cable & Cable C+D Pack (free & donationware)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Choose Your Plan</span>
+                <h2 class="section-title">Simple, <span class="gradient-text">Transparent</span> Pricing</h2>
+                <p class="section-subtitle">One-time purchase. Lifetime license. No subscriptions.</p>
+            </div>
+            
+            <div class="pricing-cards">
+                <!-- Standard Plan -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <h3 class="pricing-tier">Standard</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount">TBD</span>
+                        </div>
+                        <p class="pricing-period">One-time payment</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> Audio capture & instant replay</li>
+                        <li><span class="check">✓</span> Pitch adjustment (-12 to +12)</li>
+                        <li><span class="check">✓</span> Speed control & reverse mode</li>
+                        <li><span class="check">✓</span> <strong>3 profiles</strong> for organization</li>
+                        <li><span class="check">✓</span> Trim editor with waveform</li>
+                        <li><span class="check">✓</span> Favourites system (9 slots/profile)</li>
+                        <li><span class="check">✓</span> Customizable hotkeys</li>
+                        <li><span class="check">✓</span> Mic passthrough</li>
+                        <li><span class="check">✓</span> Real-time stats</li>
+                        <li><span class="check">✓</span> Lifetime updates</li>
+                    </ul>
+                    
+                    <a href="#download" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+                
+                <!-- PRO Plan -->
+                <div class="pricing-card pricing-card-featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-tier">PRO</h3>
+                        <div class="pricing-price">
+                            <span class="currency">$</span>
+                            <span class="amount">TBD</span>
+                        </div>
+                        <p class="pricing-period">One-time payment</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="check">✓</span> <strong>Everything in Standard</strong></li>
+                        <li><span class="check">✓</span> <strong>9 total profiles</strong> (6 additional)</li>
+                        <li><span class="check">✓</span> <strong>Import/Export profiles</strong></li>
+                        <li><span class="check">✓</span> Profile backup & sharing</li>
+                        <li><span class="check">✓</span> Priority support</li>
+                        <li><span class="check">✓</span> Early access to new features</li>
+                        <li><span class="check">✓</span> Lifetime PRO updates</li>
+                    </ul>
+                    
+                    <a href="#download" class="btn btn-primary btn-block">Go PRO</a>
+                </div>
+            </div>
+            
+            <div class="pricing-note" data-aos="fade-up" data-aos-delay="300">
+                <p><strong>Hardware-locked licensing:</strong> Each license is tied to your specific computer. Contact us for replacement licenses if you upgrade hardware.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Guide -->
+    <section class="section setup-section" id="setup">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Quick Start</span>
+                <h2 class="section-title">Setup in <span class="gradient-text">5 Minutes</span></h2>
+                <p class="section-subtitle">Follow these simple steps to get Parrot Replay running</p>
+            </div>
+            
+            <div class="setup-steps">
+                <div class="setup-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="setup-step-number">1</div>
+                    <div class="setup-step-content">
+                        <h3>Install VB-Audio Software</h3>
+                        <p>Download and install both VB-Audio Virtual Cable (free) and VB-Audio Cable C+D Pack (donationware).</p>
+                        <div class="setup-buttons">
+                            <a href="https://vb-audio.com/Cable/" target="_blank" class="btn btn-small">Official VB-Audio</a>
+                            <a href="https://archive.org/details/vb-cable-c-d-pack" target="_blank" class="btn btn-small btn-outline">Community Archive</a>
+                        </div>
+                        <p class="setup-note">⚠️ <strong>Restart required</strong> after installation</p>
+                    </div>
+                </div>
+                
+                <div class="setup-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="setup-step-number">2</div>
+                    <div class="setup-step-content">
+                        <h3>Configure Audio Routing</h3>
+                        <p>Open <strong>Control Panel → Sound → Recording</strong> tab</p>
+                        <ul class="setup-list">
+                            <li>Right-click <strong>Cable Output (CABLE D)</strong></li>
+                            <li>Select <strong>Properties → Listen</strong> tab</li>
+                            <li>Check <strong>"Listen to this device"</strong></li>
+                            <li>Set playback device to your headphones</li>
+                            <li>Click <strong>Apply</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="setup-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="setup-step-number">3</div>
+                    <div class="setup-step-content">
+                        <h3>Launch Parrot Replay</h3>
+                        <p>Run <strong>Parrot Replay.exe</strong> and verify system status shows:</p>
+                        <div class="status-indicators">
+                            <div class="status-item status-ok">✓ VB-Audio Virtual Cable</div>
+                            <div class="status-item status-ok">✓ VB-Audio Cable C+D</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="setup-step" data-aos="fade-up" data-aos-delay="400">
+                    <div class="setup-step-number">4</div>
+                    <div class="setup-step-content">
+                        <h3>Activate Your License</h3>
+                        <p>Click <strong>"Click to Activate"</strong> in the app</p>
+                        <ul class="setup-list">
+                            <li>Click <strong>"Get Hardware ID"</strong></li>
+                            <li>Send your Hardware ID via Discord/Email</li>
+                            <li>Receive your license key</li>
+                            <li>Enter the key to activate</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="setup-step" data-aos="fade-up" data-aos-delay="500">
+                    <div class="setup-step-number">5</div>
+                    <div class="setup-step-content">
+                        <h3>Start Recording!</h3>
+                        <p>Default hotkeys (NumPad):</p>
+                        <div class="hotkeys-grid">
+                            <div class="hotkey-item">
+                                <kbd>Num +</kbd>
+                                <span>Capture</span>
+                            </div>
+                            <div class="hotkey-item">
+                                <kbd>Num Enter</kbd>
+                                <span>Play</span>
+                            </div>
+                            <div class="hotkey-item">
+                                <kbd>Num /</kbd>
+                                <span>Pitch Down</span>
+                            </div>
+                            <div class="hotkey-item">
+                                <kbd>Num *</kbd>
+                                <span>Pitch Up</span>
+                            </div>
+                            <div class="hotkey-item">
+                                <kbd>Num -</kbd>
+                                <span>Reverse</span>
+                            </div>
+                            <div class="hotkey-item">
+                                <kbd>Num .</kbd>
+                                <span>Local Play</span>
+                            </div>
+                        </div>
+                        <p class="setup-note">💡 Customize hotkeys in settings for TKL keyboards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="section requirements-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Compatibility</span>
+                <h2 class="section-title">System <span class="gradient-text">Requirements</span></h2>
+            </div>
+            
+            <div class="requirements-grid">
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="req-icon">💻</div>
+                    <h3>Operating System</h3>
+                    <p>Windows 10 or Windows 11 (64-bit)</p>
+                </div>
+                
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="req-icon">🧠</div>
+                    <h3>Memory</h3>
+                    <p>4 GB RAM minimum<br>8 GB recommended</p>
+                </div>
+                
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="req-icon">💾</div>
+                    <h3>Storage</h3>
+                    <p>100 MB for application<br>Variable for recordings</p>
+                </div>
+                
+                <div class="requirement-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="req-icon">🎤</div>
+                    <h3>Audio Hardware</h3>
+                    <p>Microphone input<br>Headset or speakers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="section download-section" id="download">
+        <div class="container">
+            <div class="download-card" data-aos="zoom-in">
+                <h2 class="download-title">Ready to Get Started?</h2>
+                <p class="download-subtitle">Download Parrot Replay and unlock professional audio control</p>
+                
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary btn-lg btn-download">
+                        <span class="btn-icon">⬇</span>
+                        Download Parrot Replay
+                        <span class="btn-meta">Windows 10 & 11 • Latest Version</span>
+                    </a>
+                </div>
+                
+                <div class="download-info">
+                    <div class="info-item">
+                        <span class="info-label">File Size:</span>
+                        <span class="info-value">~50 MB</span>
+                    </div>
+                    <div class="info-divider">•</div>
+                    <div class="info-item">
+                        <span class="info-label">Version:</span>
+                        <span class="info-value">1.0</span>
+                    </div>
+                    <div class="info-divider">•</div>
+                    <div class="info-item">
+                        <span class="info-label">License:</span>
+                        <span class="info-value">Proprietary</span>
+                    </div>
+                </div>
+                
+                <p class="download-note">
+                    By downloading, you agree to our 
+                    <a href="#" onclick="openModal('eulaModal'); return false;">End-User License Agreement</a> 
+                    and 
+                    <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge">Support</span>
+                <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <h3>Can I transfer my license to a new computer?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Licenses are hardware-locked to your specific computer. If you upgrade your hardware significantly (e.g., motherboard replacement), contact us for a replacement license. We grant these at our discretion.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <h3>Does Parrot Replay require internet connection?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No! Parrot Replay is 100% offline. No telemetry, no cloud storage, no internet required. Your audio recordings stay completely private on your machine.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">
+                        <h3>What's the difference between Standard and PRO?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Standard includes 3 profiles with all core features. PRO unlocks 6 additional profiles (9 total) and adds Import/Export functionality for backing up and sharing your clip collections.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question">
+                        <h3>Will this get me banned from games?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Parrot Replay is an audio tool, not a game cheat. However, you are responsible for following game rules and platform terms of service. Use responsibly and check your game's specific policies.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="faq-question">
+                        <h3>Can I use this with Discord/OBS/Streaming?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Set your Discord/OBS input to VB-Audio Virtual Cable, and Parrot Replay will route audio there. You can also use local playback mode to preview clips privately.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="faq-question">
+                        <h3>What if I don't have a NumPad on my keyboard?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Parrot Replay includes a full hotkey customization system! Rebind all controls to any keys you want using the visual hotkey editor with live key capture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="brand-icon">🦜</span>
+                        <span class="brand-text">Parrot Replay</span>
+                    </div>
+                    <p class="footer-tagline">Professional voice replay and audio control for Windows</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#download">Download</a>
+                        <a href="#setup">Setup Guide</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#" onclick="openModal('eulaModal'); return false;">EULA</a>
+                        <a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Contact Us</a>
+                        <a href="#">Discord Community</a>
+                        <a href="#">Documentation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Parrot Replay Software. All rights reserved.</p>
+                <p>Made with 💚 for the gaming and content creation community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EULA Modal -->
+    <div id="eulaModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>End-User License Agreement</h2>
+                <button class="modal-close" onclick="closeModal('eulaModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <pre>End-User Licence Agreement (EULA)
+for Parrot Replay Software
+Version 1.0 – Effective Date: 24 October 2025
+
+This End-User Licence Agreement ("Agreement") governs your use of Parrot Replay ("the Software"), developed and distributed by Parrot Replay Software ("the Developer").
+By installing, copying, or using the Software, you agree to all terms below.
+If you do not agree, do not install or use the Software.
+
+1. Licence Grant
+
+The Developer grants you a limited, non-exclusive, non-transferable licence to install and use one copy of the Software on a single personal computer for lawful personal or commercial use.
+Ownership of the Software remains with the Developer.
+
+2. Ownership and Restrictions
+
+The Software, source code, design, graphics, and documentation remain the exclusive property of the Developer.
+
+You may not:
+• Modify, reverse-engineer, decompile, or disassemble the Software.
+• Sell, rent, lease, redistribute, or share the Software or any licence key.
+• Remove or alter copyright, trademark, or attribution notices.
+• Use the Software for any unlawful or prohibited purpose.
+
+Use of the Software is entirely at your own risk. You are solely responsible for compliance with all applicable laws and platform terms.
+
+3. Recording and Consent Responsibilities
+
+The Software may record, replay, and process in-game or online voice-chat audio.
+You are solely responsible for ensuring compliance with all applicable recording, privacy, and data-protection laws and any game or platform terms of service.
+
+You must not record, edit, or distribute another person's voice without consent where required by law.
+The Developer makes no representation that such actions are lawful in your jurisdiction.
+
+4. Misuse and Consequences
+
+The Developer is not responsible for misuse of the Software, including but not limited to:
+• Offensive, harassing, defamatory, or unlawful playback
+• Violations of game or platform rules
+• Account bans, suspensions, or penalties
+
+You accept full liability for all consequences of your conduct and agree to use the Software responsibly and respectfully.
+
+5. Third-Party Software Dependencies
+
+The Software relies on third-party audio-routing components developed by VB-Audio Software to function properly:
+• VB-Audio Virtual Cable (Free)
+• VB-Audio CABLE C+D Pack (Donationware – minimum donation required)
+
+Parrot Replay does not host, modify, or redistribute VB-Audio software.
+All rights to VB-Audio products remain with VB-Audio Software.
+
+6. Activation and Hardware Identification
+
+To activate the Software, a hardware ID is generated locally from system components and converted into a secure hash.
+This identifier cannot be reversed to reveal underlying hardware information.
+
+If your hardware changes significantly (e.g., motherboard replacement), your licence may become invalid and require reactivation. Replacement licences are granted at the Developer's discretion.
+
+7. Data Protection and Privacy
+
+The Software does not collect, transmit, or store any personal data.
+All configuration and licence data remain local to your computer.
+No telemetry, analytics, or remote monitoring are included.
+
+8. Disclaimer of Warranties
+
+The Software is provided "as is", without warranty of any kind, express or implied, including merchantability, fitness for a particular purpose, or non-infringement.
+You assume all risk regarding quality and performance.
+
+9. Limitation of Liability
+
+To the fullest extent permitted by law, the Developer shall not be liable for any direct, indirect, incidental, consequential, or special damages, including loss of data, profits, or account access, even if advised of such possibilities.
+
+10. Termination
+
+This Agreement remains effective until terminated.
+It terminates automatically if you breach any term.
+Upon termination, you must uninstall and delete all copies.
+
+11. Governing Law
+
+This Agreement is governed by and construed under the laws of the United Kingdom.
+All disputes shall be resolved exclusively in the courts of the United Kingdom.
+
+12. Acknowledgment
+
+By installing or using the Software, you confirm that you have read, understood, and agreed to this Agreement.
+
+© 2025 Parrot Replay Software. All rights reserved.</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <pre>Privacy Policy for Parrot Replay
+
+Version 1.0 – Effective Date: 24 October 2025
+Developer: Parrot Replay Software
+
+1. Introduction
+
+Parrot Replay operates entirely offline and is built with privacy in mind.
+It does not automatically transmit personal information to the Developer or any third party.
+Some limited system information is processed locally to generate and verify licence activation.
+
+By using the Software, you agree to this Privacy Policy.
+
+2. Data Collection and Processing
+
+The Software performs no telemetry, analytics, or background data collection.
+
+When you request a licence, a local licence-request file is generated containing:
+• A one-way SHA-256-hashed hardware identifier
+• Your computer name
+• Your operating-system name
+• The date and time of generation
+
+This information is shown on-screen and is only shared manually if you choose to send it to the Developer.
+
+If you send your licence request through Discord or another platform, that communication is subject to the respective platform's privacy policy.
+The Developer may retain the message (including the hashed hardware ID) inside Discord solely for verification, anti-abuse, and reissue purposes.
+
+Once a licence is issued, the Developer does not otherwise store or reuse request data.
+
+3. Audio Recordings
+
+All recordings remain stored locally on your device.
+You control creation, deletion, and sharing.
+The Developer has no access to your recordings and bears no responsibility for their content or distribution.
+
+4. Third-Party Software
+
+Parrot Replay interfaces with third-party audio-routing utilities from VB-Audio Software:
+• VB-Audio Virtual Cable (Free)
+• VB-Audio CABLE C+D Pack (Donationware)
+
+Parrot Replay does not host or control these downloads and is not responsible for their privacy practices.
+
+5. Data Security
+
+No user or hardware data ever leaves your computer automatically.
+Licence files and recordings are stored locally.
+
+6. Children's Privacy
+
+The Software is not intended for children under 13 and intentionally collects no data from them.
+
+7. Summary
+
+• Licence requests use local-only hashed system data
+• No telemetry or background collection
+• No automatic transmission or cloud storage
+• Recordings remain entirely under user control
+• Developer retains licence data only if voluntarily provided via Discord
+
+© 2025 Parrot Replay Software. All rights reserved.</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 50
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                closeModal(e.target.id);
+            }
+        });
+
+        // Close modal on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
