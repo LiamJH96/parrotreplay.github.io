@@ -1004,39 +1004,7 @@ a {
     z-index: 2;
 }
 
-.pro-featured {
-    border-color: #a78bfa;
-    border-width: 3px;
-    box-shadow: 0 10px 40px rgba(167, 139, 250, 0.4);
-    animation: prismBorder 4s ease-in-out infinite;
-}
-
-@keyframes prismBorder {
-    0%, 100% {
-        border-color: #a78bfa;
-        box-shadow: 
-            0 10px 40px rgba(167, 139, 250, 0.4),
-            0 0 20px rgba(167, 139, 250, 0.3);
-    }
-    25% {
-        border-color: #c4b5fd;
-        box-shadow: 
-            0 10px 40px rgba(196, 181, 253, 0.5),
-            0 0 25px rgba(196, 181, 253, 0.4);
-    }
-    50% {
-        border-color: #ddd6fe;
-        box-shadow: 
-            0 10px 40px rgba(221, 214, 254, 0.5),
-            0 0 30px rgba(221, 214, 254, 0.4);
-    }
-    75% {
-        border-color: #c4b5fd;
-        box-shadow: 
-            0 10px 40px rgba(196, 181, 253, 0.5),
-            0 0 25px rgba(196, 181, 253, 0.4);
-    }
-}
+/* Removed .pro-featured and prismBorder animation to ensure consistent card appearance */
 
 /* Card Badge */
 .card-badge {
@@ -1080,24 +1048,7 @@ a {
     opacity: 1;
 }
 
-.featured-label {
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--neon-green);
-    color: #000;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0 0 12px 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.pro-card .featured-label {
-    background: linear-gradient(135deg, #c4b5fd, #a78bfa);
-}
+/* Removed .featured-label styling as the badge is no longer used */
 
 /* Card Header */
 .card-header {
