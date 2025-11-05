@@ -317,18 +317,21 @@ a {
 }
 
 .hero-logo {
-    width: 200px;
+    width: 280px;
     height: auto;
     filter: drop-shadow(0 0 20px var(--neon-green-glow));
-    animation: float 6s ease-in-out infinite;
+    animation: pulseGlow 3s ease-in-out infinite;
 }
 
-@keyframes floatLogo {
+@keyframes pulseGlow {
     0%, 100% {
-        transform: translateY(0);
+        filter: drop-shadow(0 0 20px var(--neon-green-glow));
+        transform: scale(1);
     }
     50% {
-        transform: translateY(-10px);
+        filter: drop-shadow(0 0 40px var(--neon-green-glow)) 
+                drop-shadow(0 0 60px rgba(57, 255, 20, 0.4));
+        transform: scale(1.02);
     }
 }
 
@@ -726,10 +729,12 @@ a {
 }
 
 .tier-title-pro {
-    background: linear-gradient(135deg, #a855f7, #9333ea, #7e22ce);
+    background: linear-gradient(90deg, #7e22ce, #9333ea, #a855f7, #c084fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.8)) 
+            drop-shadow(0 0 40px rgba(147, 51, 234, 0.5));
 }
 
 .tier-icon {
@@ -773,6 +778,9 @@ a {
     position: relative;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .standard-card {
@@ -1009,11 +1017,11 @@ a {
 /* Card Badge */
 .card-badge {
     position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
+    top: 1rem;
+    right: 1rem;
     background: linear-gradient(135deg, var(--neon-green), #00cc66);
     color: #000;
-    padding: 0.4rem 1rem;
+    padding: 0.4rem 0.75rem;
     border-radius: 50px;
     font-size: 0.75rem;
     font-weight: 700;
@@ -1028,22 +1036,7 @@ a {
     box-shadow: 0 4px 15px rgba(147, 51, 234, 0.5);
 }
 
-.card-badge-pro::before {
-    content: '✨';
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.card-badge-pro::after {
-    content: '✨';
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.pro-card:hover .card-badge-pro::before,
-.pro-card:hover .card-badge-pro::after {
-    opacity: 1;
-}
+/* Removed star emoji decorations for better alignment */
 
 /* Removed .featured-label styling as the badge is no longer used */
 
@@ -1065,7 +1058,7 @@ a {
     align-items: flex-start;
     justify-content: center;
     gap: 0.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 3.5rem;
 }
 
 .currency {
@@ -1101,6 +1094,7 @@ a {
     color: var(--text-muted);
     text-decoration: line-through;
     font-size: 1rem;
+    margin-top: -3rem;
     margin-bottom: 1.5rem;
 }
 
@@ -1109,7 +1103,10 @@ a {
     list-style: none;
     padding: 0;
     margin: 2rem 0;
-    min-height: 150px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .card-features li {
@@ -1148,6 +1145,7 @@ a {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: auto;
 }
 
 .card-button:hover {
@@ -1306,11 +1304,11 @@ a {
 .setup-note {
     margin-top: 1rem;
     padding: 0.75rem;
-    background: rgba(255, 68, 68, 0.1);
-    border: 1px solid rgba(255, 68, 68, 0.3);
+    background: rgba(57, 255, 20, 0.1);
+    border: 1px solid rgba(57, 255, 20, 0.3);
     border-radius: var(--radius-sm);
     font-size: 0.875rem;
-    color: #ff4444;
+    color: var(--neon-green);
 }
 
 .status-indicators {
@@ -1535,9 +1533,10 @@ kbd {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
     margin-bottom: 3rem;
+    align-items: start;
 }
 
 .footer-brand {
@@ -1565,17 +1564,30 @@ kbd {
     max-width: 300px;
 }
 
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 900px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .footer-column h4 {
     font-size: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--neon-green);
+    font-weight: 600;
 }
 
 .footer-column a {
-    display: block;
     color: var(--text-secondary);
-    margin-bottom: 0.5rem;
     transition: color var(--transition-fast);
+    font-size: 0.95rem;
 }
 
 .footer-column a:hover {
@@ -1725,6 +1737,12 @@ kbd {
     
     .footer-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .routing-flow {
