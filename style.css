@@ -726,7 +726,7 @@ a {
 }
 
 .tier-title-pro {
-    background: linear-gradient(135deg, #c4b5fd, #a78bfa, #8b5cf6);
+    background: linear-gradient(135deg, #a855f7, #9333ea, #7e22ce);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -740,19 +740,19 @@ a {
     font-size: 1.25rem;
     animation: sparkleRotate 3s ease-in-out infinite;
     display: inline-block;
-    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.8));
+    filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.8));
 }
 
 @keyframes sparkleRotate {
     0%, 100% { 
         transform: rotate(0deg) scale(1); 
         opacity: 1;
-        filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.8));
+        filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.8));
     }
     50% { 
         transform: rotate(180deg) scale(1.3); 
         opacity: 0.8;
-        filter: drop-shadow(0 0 20px rgba(167, 139, 250, 1));
+        filter: drop-shadow(0 0 20px rgba(168, 85, 247, 1));
     }
 }
 
@@ -788,10 +788,10 @@ a {
     background: rgba(20, 20, 20, 0.8);
 }
 
-/* PRO Card Styling - Darker Purple with More Confetti */
+/* PRO Card Styling - Medium Purple */
 .pro-card {
-    background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.2), rgba(20, 20, 20, 0.8));
-    border-color: rgba(167, 139, 250, 0.5);
+    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.2), rgba(20, 20, 20, 0.8));
+    border-color: rgba(147, 51, 234, 0.5);
     position: relative;
     overflow: hidden;
 }
@@ -807,11 +807,11 @@ a {
     background: linear-gradient(
         90deg,
         transparent,
+        rgba(255, 255, 255, 0.002),
         rgba(255, 255, 255, 0.005),
-        rgba(255, 255, 255, 0.01),
-        rgba(255, 255, 255, 0.015),
-        rgba(255, 255, 255, 0.01),
+        rgba(255, 255, 255, 0.008),
         rgba(255, 255, 255, 0.005),
+        rgba(255, 255, 255, 0.002),
         transparent
     );
     animation: shineContained 5s ease-in-out infinite;
@@ -838,11 +838,11 @@ a {
     inset: -2px;
     background: linear-gradient(
         135deg,
-        rgba(167, 139, 250, 0.6),
-        rgba(196, 181, 253, 0.4),
-        rgba(221, 214, 254, 0.6),
-        rgba(196, 181, 253, 0.4),
-        rgba(167, 139, 250, 0.6)
+        rgba(147, 51, 234, 0.6),
+        rgba(126, 34, 206, 0.4),
+        rgba(168, 85, 247, 0.6),
+        rgba(126, 34, 206, 0.4),
+        rgba(147, 51, 234, 0.6)
     );
     border-radius: 20px;
     opacity: 0;
@@ -863,13 +863,13 @@ a {
 
 .pro-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(196, 181, 253, 0.8);
+    border-color: rgba(168, 85, 247, 0.8);
     box-shadow: 
         0 25px 70px rgba(0, 0, 0, 0.5),
-        0 0 60px rgba(167, 139, 250, 0.4),
-        0 0 100px rgba(196, 181, 253, 0.2),
+        0 0 60px rgba(147, 51, 234, 0.4),
+        0 0 100px rgba(147, 51, 234, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.3), rgba(20, 20, 20, 0.9));
+    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.3), rgba(20, 20, 20, 0.9));
 }
 
 /* More purple confetti particles */
@@ -885,11 +885,11 @@ a {
     position: absolute;
     width: 6px;
     height: 6px;
-    background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+    background: linear-gradient(135deg, #a855f7, #9333ea);
     border-radius: 2px;
     opacity: 0;
     pointer-events: none;
-    box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 8px rgba(147, 51, 234, 0.6);
 }
 
 /* Header confetti */
@@ -1024,11 +1024,8 @@ a {
 }
 
 .card-badge-pro {
-    background: linear-gradient(135deg, #c4b5fd, #a78bfa, #8b5cf6);
-    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.5);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    background: linear-gradient(135deg, #9333ea, #7e22ce);
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.5);
 }
 
 .card-badge-pro::before {
@@ -1079,7 +1076,7 @@ a {
 }
 
 .pro-card .currency {
-    background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+    background: linear-gradient(135deg, #a855f7, #9333ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1093,7 +1090,7 @@ a {
 }
 
 .pro-card .amount {
-    background: linear-gradient(135deg, #ddd6fe, #c4b5fd, #a78bfa);
+    background: linear-gradient(135deg, #c084fc, #a855f7, #9333ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1131,7 +1128,7 @@ a {
 }
 
 .pro-card .card-features .check {
-    background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+    background: linear-gradient(135deg, #a855f7, #9333ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1161,9 +1158,9 @@ a {
 }
 
 .card-button-pro {
-    border-color: #a78bfa;
+    border-color: #9333ea;
     color: #fff;
-    background: linear-gradient(135deg, #c4b5fd, #a78bfa, #8b5cf6);
+    background: linear-gradient(135deg, #a855f7, #9333ea, #7e22ce);
     position: relative;
     overflow: hidden;
 }
@@ -1172,7 +1169,7 @@ a {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #ddd6fe, #c4b5fd, #a78bfa);
+    background: linear-gradient(135deg, #c084fc, #a855f7, #9333ea);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
@@ -1184,12 +1181,12 @@ a {
 }
 
 .card-button-pro:hover {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed, #6d28d9) !important;
-    border-color: #c4b5fd;
+    background: linear-gradient(135deg, #7e22ce, #6b21a8, #581c87) !important;
+    border-color: #a855f7;
     color: #fff !important;
     box-shadow: 
-        0 0 40px rgba(167, 139, 250, 0.6),
-        0 0 80px rgba(167, 139, 250, 0.3);
+        0 0 40px rgba(147, 51, 234, 0.6),
+        0 0 80px rgba(147, 51, 234, 0.3);
     transform: translateY(-2px);
 }
 
