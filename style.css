@@ -807,11 +807,11 @@ a {
     background: linear-gradient(
         90deg,
         transparent,
+        rgba(255, 255, 255, 0.01),
         rgba(255, 255, 255, 0.03),
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.15),
-        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05),
         rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.01),
         transparent
     );
     animation: shineContained 5s ease-in-out infinite;
@@ -1058,22 +1058,21 @@ a {
     background: linear-gradient(135deg, #c4b5fd, #a78bfa, #8b5cf6);
     box-shadow: 0 4px 15px rgba(167, 139, 250, 0.5);
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .card-badge-pro::before {
     content: '✨';
-    position: absolute;
-    left: -25px;
     opacity: 0;
-    animation: sparkleFloat 2s ease-in-out infinite;
+    transition: opacity 0.3s ease;
 }
 
 .card-badge-pro::after {
     content: '✨';
-    position: absolute;
-    right: -25px;
     opacity: 0;
-    animation: sparkleFloat 2s ease-in-out infinite 1s;
+    transition: opacity 0.3s ease;
 }
 
 .pro-card:hover .card-badge-pro::before,
