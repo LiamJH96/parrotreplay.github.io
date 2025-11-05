@@ -807,11 +807,11 @@ a {
     background: linear-gradient(
         90deg,
         transparent,
+        rgba(255, 255, 255, 0.005),
         rgba(255, 255, 255, 0.01),
-        rgba(255, 255, 255, 0.03),
-        rgba(255, 255, 255, 0.05),
-        rgba(255, 255, 255, 0.03),
+        rgba(255, 255, 255, 0.015),
         rgba(255, 255, 255, 0.01),
+        rgba(255, 255, 255, 0.005),
         transparent
     );
     animation: shineContained 5s ease-in-out infinite;
@@ -1020,13 +1020,13 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3);
+    z-index: 10;
 }
 
 .card-badge-pro {
     background: linear-gradient(135deg, #c4b5fd, #a78bfa, #8b5cf6);
     box-shadow: 0 4px 15px rgba(167, 139, 250, 0.5);
-    position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.5rem;
 }
@@ -1175,17 +1175,26 @@ a {
     background: linear-gradient(135deg, #ddd6fe, #c4b5fd, #a78bfa);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
-.card-button-pro:hover::before {
-    opacity: 1;
+.card-button-pro > * {
+    position: relative;
+    z-index: 2;
 }
 
 .card-button-pro:hover {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed, #6d28d9) !important;
+    border-color: #c4b5fd;
+    color: #fff !important;
     box-shadow: 
         0 0 40px rgba(167, 139, 250, 0.6),
         0 0 80px rgba(167, 139, 250, 0.3);
     transform: translateY(-2px);
+}
+
+.card-button-pro:hover::before {
+    opacity: 1;
 }
 
 .pricing-note {
