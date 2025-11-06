@@ -735,6 +735,18 @@ a {
     background-clip: text;
     filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.8)) 
             drop-shadow(0 0 40px rgba(147, 51, 234, 0.5));
+    animation: proTitlePulse 4s ease-in-out infinite;
+}
+
+@keyframes proTitlePulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(147, 51, 234, 0.6)) 
+                drop-shadow(0 0 40px rgba(147, 51, 234, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(147, 51, 234, 1)) 
+                drop-shadow(0 0 60px rgba(147, 51, 234, 0.6));
+    }
 }
 
 .tier-icon {
@@ -796,91 +808,78 @@ a {
     background: rgba(20, 20, 20, 0.8);
 }
 
-/* PRO Card Styling - Medium Purple */
+/* PRO Card Styling - Clean Premium with Pulsing Border */
 .pro-card {
-    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.2), rgba(20, 20, 20, 0.8));
-    border-color: rgba(147, 51, 234, 0.5);
+    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.15), rgba(20, 20, 20, 0.95));
+    border: 2px solid rgba(147, 51, 234, 0.5);
     position: relative;
     overflow: hidden;
+    box-shadow: 
+        0 0 30px rgba(147, 51, 234, 0.2),
+        inset 0 1px 0 rgba(168, 85, 247, 0.2);
+    animation: proBorderPulse 4s ease-in-out infinite;
 }
 
-/* Contained shine sweep */
+@keyframes proBorderPulse {
+    0%, 100% {
+        border-color: rgba(147, 51, 234, 0.5);
+        box-shadow: 
+            0 0 30px rgba(147, 51, 234, 0.2),
+            0 0 60px rgba(147, 51, 234, 0.1),
+            inset 0 1px 0 rgba(168, 85, 247, 0.2);
+    }
+    50% {
+        border-color: rgba(168, 85, 247, 0.85);
+        box-shadow: 
+            0 0 45px rgba(147, 51, 234, 0.45),
+            0 0 80px rgba(147, 51, 234, 0.25),
+            inset 0 1px 0 rgba(168, 85, 247, 0.4);
+    }
+}
+
+/* Subtle animated glow */
 .pro-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.002),
-        rgba(255, 255, 255, 0.005),
-        rgba(255, 255, 255, 0.008),
-        rgba(255, 255, 255, 0.005),
-        rgba(255, 255, 255, 0.002),
-        transparent
-    );
-    animation: shineContained 5s ease-in-out infinite;
-    pointer-events: none;
-    z-index: 1;
-}
-
-@keyframes shineContained {
-    0% {
-        left: -100%;
-    }
-    20% {
-        left: 100%;
-    }
-    100% {
-        left: 100%;
-    }
-}
-
-/* Border glow */
-.pro-card::after {
     content: '';
     position: absolute;
     inset: -2px;
     background: linear-gradient(
         135deg,
-        rgba(147, 51, 234, 0.6),
-        rgba(126, 34, 206, 0.4),
-        rgba(168, 85, 247, 0.6),
-        rgba(126, 34, 206, 0.4),
-        rgba(147, 51, 234, 0.6)
+        rgba(147, 51, 234, 0.4),
+        rgba(168, 85, 247, 0.3),
+        rgba(192, 132, 252, 0.4)
     );
     border-radius: 20px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     z-index: 0;
     background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite;
+    animation: subtleGlow 6s ease infinite;
+    filter: blur(10px);
 }
 
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+@keyframes subtleGlow {
+    0%, 100% { 
+        opacity: 0.15;
+        background-position: 0% 50%; 
+    }
+    50% { 
+        opacity: 0.25;
+        background-position: 100% 50%; 
+    }
 }
 
-.pro-card:hover::after {
-    opacity: 1;
-}
-
+/* Hover effects */
 .pro-card:hover {
     transform: translateY(-8px);
     border-color: rgba(168, 85, 247, 0.8);
     box-shadow: 
         0 25px 70px rgba(0, 0, 0, 0.5),
         0 0 60px rgba(147, 51, 234, 0.4),
-        0 0 100px rgba(147, 51, 234, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.3), rgba(20, 20, 20, 0.9));
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.25), rgba(20, 20, 20, 0.95));
 }
 
-/* More purple confetti particles */
+/* Purple confetti particles - only on hover */
 .pro-card .card-header::before,
 .pro-card .card-header::after,
 .pro-card .card-price::before,
@@ -1311,6 +1310,103 @@ a {
     color: var(--neon-green);
 }
 
+/* VB-Audio Download Options */
+.vb-audio-downloads {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.download-option {
+    padding: 1.5rem;
+    background: rgba(20, 20, 20, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.download-option:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(20, 20, 20, 0.8);
+}
+
+.download-option.recommended {
+    border-color: rgba(57, 255, 20, 0.4);
+    background: rgba(57, 255, 20, 0.05);
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
+}
+
+.download-option.recommended:hover {
+    border-color: rgba(57, 255, 20, 0.6);
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.2);
+}
+
+.download-option.alternative {
+    opacity: 0.8;
+}
+
+.option-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: var(--neon-green);
+    color: #000;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+.download-option h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.download-option p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.download-option .btn {
+    margin-top: 0.5rem;
+}
+
+.archive-note {
+    font-size: 0.8rem;
+    color: #ff9800;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.vb-audio-disclaimer {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 152, 0, 0.1);
+    border: 1px solid rgba(255, 152, 0, 0.3);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+}
+
+.vb-audio-disclaimer strong {
+    color: #ff9800;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.vb-audio-disclaimer p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.vb-audio-disclaimer p:last-child {
+    margin-bottom: 0;
+}
+
 .status-indicators {
     display: flex;
     flex-direction: column;
@@ -1388,6 +1484,218 @@ kbd {
 .requirement-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
+}
+
+/* ========== Discord Section ========== */
+.discord-section {
+    background: linear-gradient(135deg, rgba(88, 101, 242, 0.05), rgba(114, 137, 218, 0.05));
+    position: relative;
+}
+
+.discord-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.discord-content {
+    background: rgba(20, 20, 20, 0.8);
+    border: 2px solid rgba(88, 101, 242, 0.3);
+    border-radius: 24px;
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.discord-content::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(
+        135deg,
+        rgba(88, 101, 242, 0.4),
+        rgba(114, 137, 218, 0.3),
+        rgba(88, 101, 242, 0.4)
+    );
+    border-radius: 24px;
+    opacity: 0;
+    z-index: 0;
+    background-size: 200% 200%;
+    animation: discordGlow 4s ease infinite;
+    filter: blur(15px);
+}
+
+@keyframes discordGlow {
+    0%, 100% { 
+        opacity: 0.2;
+        background-position: 0% 50%; 
+    }
+    50% { 
+        opacity: 0.4;
+        background-position: 100% 50%; 
+    }
+}
+
+.discord-content > * {
+    position: relative;
+    z-index: 1;
+}
+
+.discord-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    color: #5865F2;
+    filter: drop-shadow(0 0 20px rgba(88, 101, 242, 0.6));
+    animation: discordBounce 3s ease-in-out infinite;
+}
+
+@keyframes discordBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.discord-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #5865F2, #7289DA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.discord-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+.discord-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.discord-feature {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(88, 101, 242, 0.05);
+    border: 1px solid rgba(88, 101, 242, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.discord-feature:hover {
+    background: rgba(88, 101, 242, 0.1);
+    border-color: rgba(88, 101, 242, 0.4);
+    transform: translateY(-4px);
+}
+
+.discord-feature .feature-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(88, 101, 242, 0.1);
+    border-radius: 10px;
+}
+
+.discord-feature .feature-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.discord-feature .feature-text p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.discord-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: rgba(88, 101, 242, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(88, 101, 242, 0.2);
+}
+
+.discord-stats .stat-item {
+    text-align: center;
+}
+
+.discord-stats .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5865F2;
+    margin-bottom: 0.25rem;
+}
+
+.discord-stats .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.discord-stats .stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(88, 101, 242, 0.3);
+}
+
+.btn-discord {
+    background: #5865F2;
+    color: white;
+    border: none;
+    padding: 1.25rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 
+        0 4px 20px rgba(88, 101, 242, 0.4),
+        0 0 40px rgba(88, 101, 242, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-discord:hover {
+    background: #4752C4;
+    transform: translateY(-4px);
+    box-shadow: 
+        0 8px 30px rgba(88, 101, 242, 0.5),
+        0 0 60px rgba(88, 101, 242, 0.3);
+}
+
+.btn-discord-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.discord-note {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(88, 101, 242, 0.1);
+    border: 1px solid rgba(88, 101, 242, 0.3);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.discord-note strong {
+    color: #5865F2;
 }
 
 /* ========== Download Section ========== */
@@ -1733,6 +2041,25 @@ kbd {
     
     .pricing-cards {
         grid-template-columns: 1fr;
+    }
+    
+    .discord-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .discord-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .discord-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .discord-stats .stat-divider {
+        width: 100%;
+        height: 1px;
     }
     
     .footer-content {
