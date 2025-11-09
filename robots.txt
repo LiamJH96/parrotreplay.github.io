@@ -1,0 +1,12 @@
+# Parrot Replay - Robots.txt
+# This file tells search engines which parts of the site to crawl.
+
+User-agent: *
+Allow: /
+
+# Exclude pages that don't need to appear in search results
+Disallow: /eula
+Disallow: /privacy
+
+# Clean crawl rate and structure
+Crawl-delay: 10
