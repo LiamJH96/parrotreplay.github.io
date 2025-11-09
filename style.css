@@ -879,7 +879,9 @@ a {
     background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.25), rgba(20, 20, 20, 0.95));
 }
 
-/* Purple confetti particles - only on hover */
+/* changed code - remove pro confetti + fix GO PRO hover artefacts */
+
+/* 1) Disable the confetti pseudo-elements (they create visible squares on hover) */
 .pro-card .card-header::before,
 .pro-card .card-header::after,
 .pro-card .card-price::before,
@@ -888,349 +890,85 @@ a {
 .pro-card .card-features::after,
 .pro-card .card-button::before,
 .pro-card .card-button::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: linear-gradient(135deg, #a855f7, #9333ea);
-    border-radius: 2px;
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0 0 8px rgba(147, 51, 234, 0.6);
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    box-shadow: none !important;
 }
 
-/* Header confetti */
-.pro-card .card-header::before {
-    top: -10px;
-    left: 20%;
+/* 2) Remove any leftover animations that drive the confetti */
+.pro-card:hover .card-header::before,
+.pro-card:hover .card-header::after,
+.pro-card:hover .card-price::before,
+.pro-card:hover .card-price::after,
+.pro-card:hover .card-features::before,
+.pro-card:hover .card-features::after,
+.pro-card:hover .card-button::before,
+.pro-card:hover .card-button::after {
+    animation: none !important;
 }
 
-.pro-card .card-header::after {
-    top: -10px;
-    right: 20%;
-}
-
-/* Price confetti */
-.pro-card .card-price::before {
-    top: 10%;
-    left: -10px;
-}
-
-.pro-card .card-price::after {
-    top: 10%;
-    right: -10px;
-}
-
-/* Features confetti */
-.pro-card .card-features::before {
-    top: 30%;
-    left: -10px;
-}
-
-.pro-card .card-features::after {
-    top: 30%;
-    right: -10px;
-}
-
-/* Button confetti */
-.pro-card .card-button::before {
-    bottom: -10px;
-    left: 25%;
-}
-
-.pro-card .card-button::after {
-    bottom: -10px;
-    right: 25%;
-}
-
-/* Animate confetti on hover */
-.pro-card:hover .card-header::before { animation: confetti1 2s ease-out infinite; }
-.pro-card:hover .card-header::after { animation: confetti2 2s ease-out 0.2s infinite; }
-.pro-card:hover .card-price::before { animation: confetti3 2.5s ease-out 0.4s infinite; }
-.pro-card:hover .card-price::after { animation: confetti4 2.5s ease-out 0.6s infinite; }
-.pro-card:hover .card-features::before { animation: confetti1 2.8s ease-out 0.8s infinite; }
-.pro-card:hover .card-features::after { animation: confetti2 2.8s ease-out 1s infinite; }
-.pro-card:hover .card-button::before { animation: confetti3 2.2s ease-out 0.3s infinite; }
-.pro-card:hover .card-button::after { animation: confetti4 2.2s ease-out 0.7s infinite; }
-
-@keyframes confetti1 {
-    0% {
-        opacity: 0;
-        transform: translateY(0) translateX(0) rotate(0deg) scale(1);
-    }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% {
-        opacity: 0;
-        transform: translateY(80px) translateX(-20px) rotate(180deg) scale(0.5);
-    }
-}
-
-@keyframes confetti2 {
-    0% {
-        opacity: 0;
-        transform: translateY(0) translateX(0) rotate(0deg) scale(1);
-    }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% {
-        opacity: 0;
-        transform: translateY(85px) translateX(25px) rotate(-200deg) scale(0.5);
-    }
-}
-
-@keyframes confetti3 {
-    0% {
-        opacity: 0;
-        transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
-    }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% {
-        opacity: 0;
-        transform: translateY(75px) translateX(15px) rotate(220deg) scale(0.6);
-    }
-}
-
-@keyframes confetti4 {
-    0% {
-        opacity: 0;
-        transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
-    }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% {
-        opacity: 0;
-        transform: translateY(70px) translateX(-18px) rotate(-180deg) scale(0.6);
-    }
-}
-
-/* Ensure content stays above effects */
-.pro-card > * {
-    position: relative;
-    z-index: 2;
-}
-
-/* Removed .pro-featured and prismBorder animation to ensure consistent card appearance */
-
-/* Card Badge */
-.card-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: linear-gradient(135deg, var(--neon-green), #00cc66);
-    color: #000;
-    padding: 0.4rem 0.75rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3);
-    z-index: 10;
-}
-
-.card-badge-pro {
-    background: linear-gradient(135deg, #9333ea, #7e22ce);
-    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.5);
-}
-
-/* Removed star emoji decorations for better alignment */
-
-/* Removed .featured-label styling as the badge is no longer used */
-
-/* Card Header */
-.card-header {
-    margin-bottom: 1.5rem;
-}
-
-.duration {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    text-align: center;
-}
-
-/* Card Price */
-.card-price {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0.25rem;
-    margin-bottom: 3.5rem;
-}
-
-.currency {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--neon-green);
-    margin-top: 0.75rem;
-}
-
-.pro-card .currency {
-    background: linear-gradient(135deg, #a855f7, #9333ea);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.amount {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--neon-green);
-}
-
-.pro-card .amount {
-    background: linear-gradient(135deg, #c084fc, #a855f7, #9333ea);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.original-price {
-    text-align: center;
-    color: var(--text-muted);
-    text-decoration: line-through;
-    font-size: 1rem;
-    margin-top: -3rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Card Features */
-.card-features {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.card-features li {
-    padding: 0.75rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-primary);
-    font-size: 0.95rem;
-}
-
-.card-features .check {
-    color: var(--neon-green);
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
-.pro-card .card-features .check {
-    background: linear-gradient(135deg, #a855f7, #9333ea);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Card Button */
-.card-button {
-    width: 100%;
-    padding: 1rem;
-    border: 2px solid var(--neon-green);
-    background: transparent;
-    color: var(--neon-green);
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: auto;
-}
-
-.card-button:hover {
-    background: var(--neon-green);
-    color: #000;
-    box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
-    transform: translateY(-2px);
-}
-
-.card-button-pro {
-    border-color: #9333ea;
-    color: #fff;
-    background: linear-gradient(135deg, #a855f7, #9333ea, #7e22ce);
-    position: relative;
+/* 3) Normalise GO PRO button gradient rendering and remove left-edge artefact */
+.card-button-pro,
+.card-button.card-button-pro {
+    background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #ef5aa2 100%) !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important; /* ensure full coverage, no seams */
+    background-position: center center !important;
+    border: 1px solid rgba(168,85,247,0.18) !important;
     overflow: hidden;
 }
 
-.card-button-pro::before {
-    content: '';
+/* 4) Make the shine subtle, centred and smaller so it doesn't produce a big rotated rectangle */
+.card-button-pro::after,
+.card-button.card-button-pro::after {
+    content: "";
     position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #c084fc, #a855f7, #9333ea);
+    left: 50%;
+    top: -10%;
+    width: 80%;
+    height: 120%;
+    transform: translateX(-50%) rotate(18deg);
+    background: linear-gradient(120deg, rgba(255,255,255,0.09), rgba(255,255,255,0));
+    pointer-events: none;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
+    transition: opacity .28s ease, transform .28s ease;
+    z-index: 1; /* below text (button text remains z-index:2) */
 }
 
-.card-button-pro > * {
+/* show only a subtle sheen on hover */
+.card-button-pro:hover::after,
+.card-button.card-button-pro:hover::after {
+    opacity: 1 !important;
+    transform: translateX(-50%) rotate(18deg) translateY(-2%);
+}
+
+/* 5) Ensure button text stays above pseudo element */
+.card-button-pro,
+.card-button.card-button-pro {
     position: relative;
     z-index: 2;
 }
 
-.card-button-pro:hover {
-    background: linear-gradient(135deg, #7e22ce, #6b21a8, #581c87) !important;
-    border-color: #a855f7;
-    color: #fff !important;
-    box-shadow: 
-        0 0 40px rgba(147, 51, 234, 0.6),
-        0 0 80px rgba(147, 51, 234, 0.3);
+/* 6) Safety: make generic .card-button hover not cascade into the pro button */
+.card-button:hover:not(.card-button-pro) {
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 30px var(--neon-green-glow);
     transform: translateY(-2px);
 }
 
-.card-button-pro:hover::before {
-    opacity: 1;
+/* 7) Minor: keep standard tick green and pro tick purple explicitly */
+.pricing-card-modern.standard-card .card-features .check {
+    color: var(--neon-green) !important;
 }
 
-.pricing-note {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 1.5rem;
-    background: rgba(20, 20, 20, 0.6);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Responsive */
-@media (max-width: 1200px) {
-    .pricing-cards-row {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .pricing-card-modern {
-        padding: 2rem;
-    }
-    
-    .amount {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 968px) {
-    .pricing-cards-row {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        max-width: 500px;
-    }
-    
-    .tier-title {
-        font-size: 1.5rem;
-    }
+.pricing-card-modern.pro-card .card-features .check {
+    color: transparent !important;
+    background: linear-gradient(135deg, #c084fc, #a855f7) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 /* ========== Setup Section ========== */
@@ -2106,3 +1844,720 @@ kbd {
 
 /* ========== AOS Library Link ========== */
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+
+/* changed code - fixes for PRO/Standard pricing visuals */
+
+/* ===== Enhancements: PRO header gradient, smooth glow, snow‑globe confetti ===== */
+
+/* PRO License header gradient (match section gradient style) */
+.pro-tier .tier-title,
+.tier-title.tier-title-pro {
+  background: linear-gradient(135deg, #7e22ce, #9333ea, #a855f7, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smoother purple glow on PRO cards */
+.pricing-card-modern.pro-card {
+  animation: proCardGlow 8s ease-in-out infinite;
+  will-change: box-shadow, transform;
+}
+@keyframes proCardGlow {
+  0%   { box-shadow: 0 8px 28px rgba(147,51,234,0.16); }
+  25%  { box-shadow: 0 12px 40px rgba(147,51,234,0.22); }
+  50%  { box-shadow: 0 16px 52px rgba(147,51,234,0.30); }
+  75%  { box-shadow: 0 12px 40px rgba(147,51,234,0.22); }
+  100% { box-shadow: 0 8px 28px rgba(147,51,234,0.16); }
+}
+
+/* PRO confetti snow‑globe overlay (no DOM changes). Hidden until hover. */
+.pricing-card-modern.pro-card { position: relative; overflow: hidden; }
+.pricing-card-modern.pro-card::before,
+.pricing-card-modern.pro-card::after,
+.pricing-cards-row .pricing-card-modern.pro-card::before,
+.pricing-cards-row .pricing-card-modern.pro-card::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
+  opacity: 0; transition: opacity .4s ease;
+  mix-blend-mode: screen;
+}
+
+/* fine layer */
+.pricing-card-modern.pro-card::before {
+  background-image:
+    radial-gradient(circle, rgba(200,170,255,.85) 1.2px, transparent 1.3px),
+    radial-gradient(circle, rgba(232,221,255,.85) 1.4px, transparent 1.5px);
+  background-size: 22px 26px, 14px 16px;
+  background-position: 0 0, 0 0;
+  animation: proSnowA 14s linear infinite;
+}
+/* coarse layer */
+.pricing-card-modern.pro-card::after {
+  background-image:
+    radial-gradient(circle, rgba(167,139,250,.85) 1.6px, transparent 1.7px),
+    radial-gradient(circle, rgba(192,132,252,.85) 1.8px, transparent 1.9px);
+  background-size: 28px 32px, 20px 22px;
+  background-position: 0 0, 0 0;
+  animation: proSnowB 20s linear infinite;
+}
+.pricing-card-modern.pro-card:hover::before,
+.pricing-cards-row .pricing-card-modern.pro-card:hover::before { opacity: .55 !important; }
+.pricing-card-modern.pro-card:hover::after,
+.pricing-cards-row .pricing-card-modern.pro-card:hover::after  { opacity: .45 !important; }
+@keyframes proSnowA { 0%{background-position:0 0,0 0} 100%{background-position:0 700px,0 900px} }
+@keyframes proSnowB { 0%{background-position:0 0,0 0} 100%{background-position:0 900px,0 1200px} }
+
+
+/* 1) Fix currency/price alignment for PRO cards (baseline alignment) */
+.pricing-card-modern.pro-card .card-price {
+    align-items: baseline; /* instead of flex-start so '£' aligns with amount */
+}
+
+/* 2) Ensure PRO button border matches the button appearance */
+.card-button-pro {
+    border: 1px solid rgba(168,85,247,0.18); /* matched to pro purple gradient */
+    box-shadow: 0 14px 40px rgba(124,58,237,0.10), inset 0 -2px 0 rgba(0,0,0,0.12);
+}
+
+/* keep overlay from covering the visible border (slight inset) */
+.card-button-pro::before {
+    inset: 1px;               /* stay inside the visible border */
+    border-radius: 13px;      /* match visual rounding */
+}
+
+/* 3) Restore green ticks for standard cards (prevent accidental purple override) */
+.pricing-card-modern.standard-card .card-features .check {
+    color: var(--neon-green) !important;
+}
+
+.pricing-card-modern.pro-card .card-features .check {
+    color: transparent;
+    background: linear-gradient(135deg, #c084fc, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* changed code - SAFE REVERT + scoped pro fixes (append at end of file) */
+
+/* 1) Reset/remove any layout-affecting pseudo-elements or animations added earlier */
+.pro-card::before,
+.pro-card::after,
+.pricing-card-modern.pro-card::before,
+.pricing-card-modern.pro-card::after,
+.pricing-card-modern.pro-card .glow-ghost,
+.card-button-pro::before,
+.card-button-pro::after,
+.card-button.card-button-pro::before,
+.card-button.card-button-pro::after {
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    animation: none !important;
+}
+
+/* 2) Restore safe/proper pricing card layout and defaults */
+
+/* ===== FINAL OVERRIDES (authoritative) ===== */
+/* 1) PRO header gradient (match "Transparent" style) */
+.pro-tier .tier-title,
+.tier-title.tier-title-pro {
+  background: linear-gradient(135deg, #7e22ce, #9333ea, #a855f7, #c084fc) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* 2) Smooth purple glow on PRO cards */
+.pricing-card-modern.pro-card {
+  animation: proCardGlow 8s ease-in-out infinite !important;
+  will-change: box-shadow, transform;
+}
+@keyframes proCardGlow {
+  0%   { box-shadow: 0 8px 28px rgba(147,51,234,0.16); }
+  25%  { box-shadow: 0 12px 40px rgba(147,51,234,0.22); }
+  50%  { box-shadow: 0 16px 52px rgba(147,51,234,0.30); }
+  75%  { box-shadow: 0 12px 40px rgba(147,51,234,0.22); }
+  100% { box-shadow: 0 8px 28px rgba(147,51,234,0.16); }
+}
+
+/* 3) Snow‑globe confetti via pseudo‑elements (force-enable past earlier resets) */
+.pricing-card-modern.pro-card { position: relative !important; overflow: hidden !important; }
+.pricing-card-modern.pro-card::before,
+.pricing-card-modern.pro-card::after {
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 20px !important;
+  pointer-events: none !important;
+  opacity: 0; transition: opacity .4s ease;
+  mix-blend-mode: screen;
+}
+.pricing-card-modern.pro-card::before {
+  background-image:
+    radial-gradient(circle, rgba(200,170,255,.85) 1.2px, transparent 1.3px),
+    radial-gradient(circle, rgba(232,221,255,.85) 1.4px, transparent 1.5px);
+  background-size: 22px 26px, 14px 16px;
+  background-position: 0 0, 0 0;
+  animation: proSnowA 14s linear infinite;
+}
+.pricing-card-modern.pro-card::after {
+  background-image:
+    radial-gradient(circle, rgba(167,139,250,.85) 1.6px, transparent 1.7px),
+    radial-gradient(circle, rgba(192,132,252,.85) 1.8px, transparent 1.9px);
+  background-size: 28px 32px, 20px 22px;
+  background-position: 0 0, 0 0;
+  animation: proSnowB 20s linear infinite;
+}
+.pricing-card-modern.pro-card:hover::before { opacity: .55; }
+.pricing-card-modern.pro-card:hover::after  { opacity: .45; }
+@keyframes proSnowA { 0%{background-position:0 0,0 0} 100%{background-position:0 700px,0 900px} }
+@keyframes proSnowB { 0%{background-position:0 0,0 0} 100%{background-position:0 900px,0 1200px} }
+
+.pricing-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pricing-card-modern {
+    background: rgba(20,20,20,0.6);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* 3) Safe, subtle PRO styling (no overlay/animation that affects layout) */
+.pricing-card-modern.pro-card,
+.pro-card {
+    background: radial-gradient(circle at top right, rgba(147,51,234,0.08), rgba(20,20,20,0.92));
+    border: 2px solid rgba(147,51,234,0.35);
+    box-shadow: 0 8px 30px rgba(147,51,234,0.10);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    animation: none;
+}
+
+/* 4) Ensure currency + amount align correctly */
+.pricing-card-modern .card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+/* 5) Stable PRO button rules (no confetti, consistent gradient + hover) */
+.card-button-pro,
+.card-button.card-button-pro {
+    background: linear-gradient(90deg,#7c3aed 0%,#a855f7 50%,#ef5aa2 100%) !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+    color: #fff !important;
+    border: 1px solid rgba(168,85,247,0.18) !important;
+    box-shadow: none !important;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* subtle hover but no odd artifacts or colour bleed */
+.card-button-pro:hover,
+.card-button.card-button-pro:hover {
+    background: linear-gradient(90deg,#6d28d9 0%,#a855f7 50%,#f472b6 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(124,58,237,0.12);
+    color: #fff !important;
+}
+
+/* 6) Prevent generic green hover from affecting PRO button (specificity) */
+.card-button:hover:not(.card-button-pro) {
+    background: rgba(57,255,20,0.07);
+    color: #fff;
+    box-shadow: 0 0 18px rgba(57,255,20,0.12);
+}
+
+/* 7) Restore feature ticks explicitly */
+.pricing-card-modern.standard-card .card-features .check {
+    color: var(--neon-green) !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+.pricing-card-modern.pro-card .card-features .check {
+    color: #c084fc !important; /* purple tick for pro */
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+/* 8) Safety: remove any remaining forced !important artifacts from prior experiments */
+*[style*="!important"] { /* no-op safety rule - won't remove inline !important but helps testing */ }
+
+/* End of safe revert block */
+
+/* ===== Final Pricing Card Layout (authoritative) ===== */
+/* Grid: 3-up desktop, responsive down to 1-up */
+.pricing-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Card shell */
+.pricing-card-modern {
+    background: rgba(20, 20, 20, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Standard (green) look */
+.pricing-card-modern.standard-card {
+    border-color: rgba(57, 255, 20, 0.25);
+}
+.pricing-card-modern.standard-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--neon-green);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.5), 0 0 36px rgba(57,255,20,0.18);
+}
+
+/* PRO (purple) look */
+.pricing-card-modern.pro-card {
+    background: radial-gradient(circle at top right, rgba(147, 51, 234, 0.14), rgba(20,20,20,0.95));
+    border-color: rgba(147, 51, 234, 0.55);
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.25), inset 0 1px 0 rgba(168, 85, 247, 0.22);
+}
+.pricing-card-modern.pro-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(168, 85, 247, 0.9);
+    box-shadow: 0 22px 64px rgba(0,0,0,0.55), 0 0 60px rgba(147, 51, 234, 0.45);
+}
+
+/* Header/duration */
+.pricing-card-modern .card-header { margin-bottom: 0.75rem; }
+.pricing-card-modern .duration {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.2px;
+}
+
+/* Price */
+.pricing-card-modern .card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.25rem;
+}
+.pricing-card-modern .card-price .currency { font-weight: 800; font-size: 1.6rem; }
+.pricing-card-modern .card-price .amount { font-weight: 900; font-size: 3.25rem; line-height: 1; letter-spacing: -0.5px; }
+.pricing-card-modern.standard-card .card-price .currency,
+.pricing-card-modern.standard-card .card-price .amount { color: var(--neon-green); }
+.pricing-card-modern.pro-card .card-price .currency,
+.pricing-card-modern.pro-card .card-price .amount { color: #c084fc; }
+
+/* Original/strikethrough price */
+.pricing-card-modern .original-price {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    margin-bottom: 0.75rem;
+}
+
+/* Feature list */
+.pricing-card-modern .card-features { list-style: none; padding: 0; margin: 1rem 0 1.5rem; }
+.pricing-card-modern .card-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0;
+    color: var(--text-secondary);
+}
+.pricing-card-modern .card-features .check { font-weight: 700; }
+.pricing-card-modern.standard-card .card-features .check { color: var(--neon-green); }
+.pricing-card-modern.pro-card .card-features .check { color: #c084fc; }
+
+/* Badge (Save X%) */
+.pricing-card-modern .card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 999px;
+    letter-spacing: 0.3px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(57, 255, 20, 0.12);
+    color: var(--neon-green);
+}
+.pricing-card-modern .card-badge.card-badge-pro {
+    background: linear-gradient(90deg, #7e22ce, #a855f7);
+    color: #fff;
+    border-color: rgba(168,85,247,0.35);
+    box-shadow: 0 0 22px rgba(147,51,234,0.45);
+}
+
+/* CTA button */
+.pricing-card-modern .card-button {
+    margin-top: auto;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: transparent;
+    border: 1.5px solid var(--neon-green);
+    color: var(--neon-green);
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.pricing-card-modern .card-button:hover { background: rgba(57,255,20,0.08); transform: translateY(-2px); box-shadow: 0 0 24px rgba(57,255,20,0.18); }
+
+/* PRO button variant */
+.pricing-card-modern .card-button.card-button-pro {
+    border: 1px solid rgba(168,85,247,0.2);
+    color: #fff;
+    background: linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #ef5aa2 100%);
+}
+.pricing-card-modern .card-button.card-button-pro:hover {
+    background: linear-gradient(90deg, #6d28d9 0%, #a855f7 50%, #f472b6 100%);
+    transform: perspective(700px) translateY(-2px) scale(1.02) rotateX(6deg);
+    box-shadow: 0 0 0 1px rgba(168,85,247,0.6), 0 16px 36px rgba(124,58,237,0.35), 0 0 28px rgba(168,85,247,0.5);
+}
+
+/* Responsive fixes for the pricing rows */
+@media (max-width: 1100px) {
+    .pricing-cards-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .pricing-cards-row { grid-template-columns: 1fr; }
+}
+
+/* Center and emphasize duration (years) on all pricing cards */
+.pricing-card-modern .card-header {
+    display: flex;
+    justify-content: center;
+}
+.pricing-card-modern .duration {
+    color: var(--text-primary) !important;
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    font-weight: 700;
+}
+
+/* Center prices and original (struck-through) prices */
+.pricing-card-modern .card-price {
+    justify-content: center !important;
+    text-align: center;
+    width: 100%;
+}
+.pricing-card-modern .original-price {
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+/* Center CTA button labels */
+.pricing-card-modern .card-button,
+.pricing-card-modern .card-button.card-button-pro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Pricing note (bordered pill) */
+.pricing-note {
+    max-width: 1000px;
+    margin: 1.5rem auto 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.02);
+    text-align: center;
+}
+.pricing-note p { margin: 0; color: var(--text-secondary); }
+.pricing-note p strong { color: var(--text-primary); }
+
+/* ===== PRO Sparkles, Premium Badge, and Emphasis ===== */
+/* Ensure child content sits above decorative layers */
+.pricing-card-modern.pro-card { isolation: isolate; }
+.pricing-card-modern.pro-card > * { position: relative; z-index: 1; }
+
+/* Premium gradient price text for PRO */
+.pricing-card-modern.pro-card .card-price .currency,
+.pricing-card-modern.pro-card .card-price .amount {
+    background: linear-gradient(180deg, #a855f7 0%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 24px rgba(168,85,247,0.35);
+}
+
+/* Confetti/spark overlay: always inside card, fades in on hover */
+.pricing-cards-row .pricing-card-modern.pro-card::before {
+    content: "" !important; /* override earlier reset */
+    position: absolute; inset: 0; border-radius: 20px; pointer-events: none;
+    opacity: 0; transition: opacity .35s ease, transform 7s ease;
+    z-index: 0; display: block !important;
+    background:
+      radial-gradient(circle 2px at 8% 18%,  rgba(232,221,255,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 88% 22%, rgba(200,170,255,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 15% 72%, rgba(180,140,255,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 82% 76%, rgba(232,221,255,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 30% 35%, rgba(192,132,252,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 70% 42%, rgba(216,180,254,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 50% 12%, rgba(167,139,250,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 6% 52%,  rgba(192,132,252,.95) 55%, transparent 60%),
+      radial-gradient(circle 2px at 94% 58%, rgba(216,180,254,.95) 55%, transparent 60%);
+    filter: drop-shadow(0 0 10px rgba(168,85,247,.9));
+}
+.pricing-cards-row .pricing-card-modern.pro-card:hover::before { opacity: 1; transform: translate3d(0, -2px, 0); }
+
+/* Extra sparkle layer with drifting cluster for visibility */
+.pricing-cards-row .pricing-card-modern.pro-card::after {
+    content: "" !important;
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    pointer-events: none;
+    opacity: .18;
+    z-index: 0;
+    display: block !important;
+    mix-blend-mode: screen;
+    background:
+      radial-gradient(circle 3px at 20% 24%, rgba(192,132,252,.9) 60%, transparent 62%),
+      radial-gradient(circle 3px at 78% 30%, rgba(216,180,254,.9) 60%, transparent 62%),
+      radial-gradient(circle 3px at 32% 78%, rgba(167,139,250,.9) 60%, transparent 62%),
+      radial-gradient(circle 3px at 68% 74%, rgba(232,221,255,.9) 60%, transparent 62%);
+    animation: proSparkleDriftBG 12s ease-in-out infinite;
+}
+@keyframes proSparkleDriftBG {
+  0%,100% { background-position: 0 0, 0 0, 0 0, 0 0; }
+  50%     { background-position: 6px -4px, -5px 6px, 8px 5px, -7px -6px; }
+}
+
+/* Bring back per-section confetti using user's spec and force over earlier resets */
+.pricing-card-modern .card-header,
+.pricing-card-modern .card-price,
+.pricing-card-modern .card-features,
+.pricing-card-modern .card-button { position: relative; }
+
+.pricing-cards-row .pricing-card-modern.pro-card .card-header::before,
+.pricing-cards-row .pricing-card-modern.pro-card .card-header::after,
+.pricing-cards-row .pricing-card-modern.pro-card .card-price::before,
+.pricing-cards-row .pricing-card-modern.pro-card .card-price::after,
+.pricing-cards-row .pricing-card-modern.pro-card .card-features::before,
+.pricing-cards-row .pricing-card-modern.pro-card .card-features::after,
+.pricing-cards-row .pricing-card-modern.pro-card .card-button::before,
+.pricing-cards-row .pricing-card-modern.pro-card .card-button::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 6px !important; height: 6px !important;
+    background: linear-gradient(135deg, #a855f7, #9333ea) !important;
+    border-radius: 2px !important; opacity: 0;
+    pointer-events: none; mix-blend-mode: screen;
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.75);
+    display: block !important; z-index: 0;
+}
+.pricing-cards-row .pricing-card-modern.pro-card .card-header::before { top: -10px; left: 20%; }
+.pricing-cards-row .pricing-card-modern.pro-card .card-header::after  { top: -10px; right: 20%; }
+.pricing-cards-row .pricing-card-modern.pro-card .card-price::before  { top: 10%; left: -10px; }
+.pricing-cards-row .pricing-card-modern.pro-card .card-price::after   { top: 10%; right: -10px; }
+.pricing-cards-row .pricing-card-modern.pro-card .card-features::before { top: 30%; left: -10px; }
+.pricing-cards-row .pricing-card-modern.pro-card .card-features::after  { top: 30%; right: -10px; }
+.pricing-cards-row .pricing-card-modern.pro-card .card-button::before  { bottom: -10px; left: 25%; }
+.pricing-cards-row .pricing-card-modern.pro-card .card-button::after   { bottom: -10px; right: 25%; }
+
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-header::before { animation: confetti1 2s ease-out infinite; }
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-header::after  { animation: confetti2 2s ease-out .2s infinite; }
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-price::before  { animation: confetti3 2.5s ease-out .4s infinite; }
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-price::after   { animation: confetti4 2.5s ease-out .6s infinite; }
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-features::before{ animation: confetti1 2.8s ease-out .8s infinite; }
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-features::after { animation: confetti2 2.8s ease-out 1s  infinite; }
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-button::before  { animation: confetti3 2.2s ease-out .3s infinite; }
+.pricing-cards-row .pricing-card-modern.pro-card:hover .card-button::after   { animation: confetti4 2.2s ease-out .7s infinite; }
+
+@keyframes confetti1 { 0%{opacity:0; transform:translate(0,0) rotate(0)   scale(1);} 10%{opacity:1;} 90%{opacity:1;} 100%{opacity:0; transform:translate(-20px,80px) rotate(180deg)  scale(.5);} }
+@keyframes confetti2 { 0%{opacity:0; transform:translate(0,0) rotate(0)   scale(1);} 10%{opacity:1;} 90%{opacity:1;} 100%{opacity:0; transform:translate(25px,85px)  rotate(-200deg) scale(.5);} }
+@keyframes confetti3 { 0%{opacity:0; transform:translate(0,0) rotate(0)   scale(.8);} 10%{opacity:1;} 90%{opacity:1;} 100%{opacity:0; transform:translate(15px,75px)  rotate(220deg)  scale(.6);} }
+@keyframes confetti4 { 0%{opacity:0; transform:translate(0,0) rotate(0)   scale(.8);} 10%{opacity:1;} 90%{opacity:1;} 100%{opacity:0; transform:translate(-18px,70px) rotate(-180deg) scale(.6);} }
+
+/* Premium animated PRO badge (no outer glow) */
+.pricing-card-modern .card-badge.card-badge-pro {
+    position: absolute;
+    top: 0.85rem; right: 0.9rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    color: #fff;
+    background: linear-gradient(90deg, #7e22ce, #a855f7, #f472b6);
+    background-clip: padding-box;
+    border: none !important; /* remove artifact source */
+    /* no external glow; all attention comes from inner animations */
+    box-shadow: none !important;
+    overflow: hidden;
+    background-size: 200% 100%;
+    animation: proBadgeShift 5s ease-in-out infinite alternate;
+}
+.pricing-card-modern .card-badge.card-badge-pro::before,
+.pricing-card-modern .card-badge.card-badge-pro::after { content: none !important; }
+
+/* Button typography back to strong all-caps look */
+.pricing-card-modern .card-button.card-button-pro {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    border-radius: 14px;
+}
+
+/* Full rework: GO PRO button with deeper glow and animated gradient sweep (no artifacts) */
+.pricing-card-modern .card-button.card-button-pro {
+    /* layered background: moving stripes + main gradient */
+    background-image:
+        repeating-linear-gradient(60deg, rgba(255,255,255,0.08) 0 2px, rgba(255,255,255,0) 2px 8px),
+        linear-gradient(100deg, #7c3aed, #a855f7 45%, #ef5aa2 100%);
+    background-size: 200% 100%, 180% 100% !important;
+    border: none !important; /* remove orange seam */
+    box-shadow:
+        0 0 0 1px rgba(168,85,247,0.48),
+        0 10px 28px rgba(124,58,237,0.25),
+        inset 0 -2px 0 rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+    animation: proBtnStripes 9s linear infinite, proBtnShift 6s ease infinite, proBtnHalo 3.8s ease-in-out infinite;
+}
+.pricing-card-modern .card-button.card-button-pro:hover {
+    background-position: 60% 0, 100% 0 !important; /* stripes, gradient */
+    box-shadow:
+        0 0 0 1px rgba(168,85,247,0.6),
+        0 14px 36px rgba(124,58,237,0.35),
+        0 0 24px rgba(168,85,247,0.45),
+        inset 0 -2px 0 rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+/* Make all feature text white for readability */
+.pricing-card-modern .card-features li { color: var(--text-primary) !important; }
+
+/* Price block alignment: reserve space for original-price across all cards */
+.pricing-card-modern .card-price { margin-bottom: 0.25rem; min-height: 4.2rem; align-items: end; }
+.pricing-card-modern .original-price { display: block; min-height: 1.4rem; }
+.pricing-card-modern .original-price.placeholder { visibility: hidden; }
+
+/* Smooth outer purple glow only on PRO cards */
+.pricing-card-modern.pro-card { animation: cardGlowPulse 6s ease-in-out infinite; }
+@keyframes cardGlowPulse {
+  0%, 100% { box-shadow: 0 10px 30px rgba(147,51,234,0.15); }
+  50%      { box-shadow: 0 18px 54px rgba(147,51,234,0.35); }
+}
+
+/* Animated GO PRO gradient shift */
+.pricing-card-modern .card-button.card-button-pro {
+    animation: proBtnShift 6s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes proBtnShift {
+  0%   { background-position: 0% 0%; }
+  50%  { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
+/* Sheen sweep inside button (no edge bleed) */
+.pricing-card-modern .card-button.card-button-pro::after {
+  content: "";
+  position: absolute;
+  top: -30%; left: -40%;
+  width: 45%; height: 160%;
+  background: linear-gradient(120deg, rgba(255,255,255,.25), rgba(255,255,255,0));
+  transform: translateX(-120%) rotate(18deg);
+  pointer-events: none;
+  animation: proBtnSheen 4.8s ease-in-out infinite;
+}
+@keyframes proBtnSheen {
+  0%, 65% { transform: translateX(-130%) rotate(18deg); opacity: 0; }
+  80%     { opacity: 1; }
+  100%    { transform: translateX(220%) rotate(18deg); opacity: 0; }
+}
+@keyframes proBtnStripes {
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 200% 0, 180% 0; }
+}
+
+/* Larger ripple ring on hover */
+.pricing-card-modern .card-button.card-button-pro::after {
+  content: "";
+  position: absolute; left: 50%; top: 50%;
+  width: 40%; height: 140%;
+  transform: translate(-50%,-50%) rotate(18deg);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.28), rgba(255,255,255,0));
+  filter: blur(8px); opacity: 0; pointer-events: none;
+}
+.pricing-card-modern .card-button.card-button-pro:hover::after { animation: proBtnRipple 0.7s ease-out forwards; }
+@keyframes proBtnRipple { 0%{opacity:.0; transform:translate(-50%,-50%) rotate(18deg) scale(.6);} 40%{opacity:.75;} 100%{opacity:0; transform:translate(-50%,-50%) rotate(18deg) scale(1.35);} }
+
+/* PRO title bigger + purple gradient emphasis (match section gradient style) */
+.pro-tier .tier-title.tier-title-pro {
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 900; letter-spacing: .3px;
+  background: linear-gradient(135deg, #7e22ce, #9333ea, #a855f7, #c084fc);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+@keyframes proBadgeShift {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+/* Replace outer-glow pulse with inner shimmer waves */
+.pricing-card-modern .card-badge.card-badge-pro::before {
+  content: "";
+  position: absolute; inset: 2px; border-radius: 999px;
+  background: radial-gradient(120% 80% at 20% 40%, rgba(255,255,255,.25), rgba(255,255,255,0)),
+              radial-gradient(100% 80% at 80% 60%, rgba(255,255,255,.18), rgba(255,255,255,0));
+  mix-blend-mode: screen; filter: blur(1px);
+  animation: badgeInnerWave 2.2s ease-in-out infinite;
+}
+@keyframes badgeInnerWave {
+  0%, 100% { opacity: .5; transform: translateX(-4%); }
+  50%      { opacity: 1; transform: translateX(4%); }
+}
+
+/* Add interactive ring on hover (overrides earlier "none" pseudo) */
+.pricing-card-modern .card-badge.card-badge-pro::after {
+  content: "" !important;
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+  width: 160%; height: 240%; border-radius: 999px;
+  background: radial-gradient(circle, rgba(255,255,255,.25), rgba(255,255,255,0));
+  opacity: 0; pointer-events: none; filter: blur(8px);
+}
+.pricing-card-modern .card-badge.card-badge-pro:hover::after { animation: proBadgeRing .8s ease-out forwards; }
+@keyframes proBadgeRing { 0%{opacity:0; transform:translate(-50%,-50%) scale(.7);} 40%{opacity:.8;} 100%{opacity:0; transform:translate(-50%,-50%) scale(1.25);} }
+
+/* Extra: halo breathe and larger hover ripple */
+.pricing-card-modern .card-button.card-button-pro { --halo: .28; }
+@keyframes proBtnShift { 0%{background-position:0% 0%} 50%{background-position:100% 0%} 100%{background-position:0% 0%} }
+.pricing-card-modern .card-button.card-button-pro::before { content:""; position:absolute; inset:-2px; border-radius:16px; background:radial-gradient(120% 140% at 50% -20%, rgba(255,255,255,.18), rgba(0,0,0,0)); opacity:var(--halo); transition:opacity .25s ease, transform .35s ease; }
+.pricing-card-modern .card-button.card-button-pro:hover::before { opacity:.9; transform:scale(1.06); }
