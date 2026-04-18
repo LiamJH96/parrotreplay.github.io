@@ -56,7 +56,7 @@
   "applicationCategory": "MultimediaApplication",
   "description": "Instant audio capture and replay for gamers. Record clips on demand, trim fast, apply playback effects, save favorites, and switch profiles per game.",
   "url": "https://parrotreplay.com/",
-  "downloadUrl": "https://downloads.parrotreplay.com/Parrot_Replay_Setup_1.0.0.exe",
+  "downloadUrl": "https://parrotreplay.com/downloads/ParrotReplay-Setup.exe",
   "softwareVersion": "1.0.0",
   "fileSize": "132MB",
   "author": {
@@ -177,6 +177,36 @@ body::after{
   background-size:128px 128px;
 }
 ::selection{background:var(--g);color:var(--bg)}
+
+/* Custom scrollbar — energy bar style */
+html{scrollbar-color:rgba(0,240,130,.4) rgba(255,255,255,.02)}
+@supports (-moz-appearance:none){
+  html{scrollbar-width:thin}
+}
+::-webkit-scrollbar{width:14px;height:14px}
+::-webkit-scrollbar-track{
+  background:
+    linear-gradient(90deg,transparent calc(50% - 0.5px),rgba(255,255,255,.04) calc(50% - 0.5px),rgba(255,255,255,.04) calc(50% + 0.5px),transparent calc(50% + 0.5px)),
+    rgba(255,255,255,.015);
+}
+::-webkit-scrollbar-thumb{
+  background:
+    linear-gradient(90deg,var(--g) 0,var(--g) 2px,rgba(0,240,130,.3) 2px,rgba(0,240,130,.2) 100%);
+  border-radius:4px;
+  box-shadow:0 0 8px rgba(0,240,130,.25),inset 1px 0 0 rgba(57,255,20,.5);
+  transition:background .25s ease,box-shadow .25s ease;
+}
+::-webkit-scrollbar-thumb:hover{
+  background:
+    linear-gradient(90deg,var(--g) 0,var(--g) 2px,rgba(0,240,130,.5) 2px,rgba(0,240,130,.35) 100%);
+  box-shadow:0 0 14px rgba(0,240,130,.5),inset 1px 0 0 rgba(57,255,20,.8);
+}
+::-webkit-scrollbar-thumb:active{
+  background:
+    linear-gradient(90deg,var(--g) 0,var(--g) 2px,rgba(0,240,130,.7) 2px,rgba(0,240,130,.5) 100%);
+  box-shadow:0 0 20px rgba(0,240,130,.7),inset 1px 0 0 rgba(57,255,20,1);
+}
+::-webkit-scrollbar-corner{background:var(--bg)}
 
 /* Global focus-visible polish */
 a:focus-visible,button:focus-visible{outline:2px solid var(--g);outline-offset:3px;border-radius:6px}
@@ -951,10 +981,9 @@ img{display:block;max-width:100%}
 <!-- ═══ NAV ═══ -->
 <header class="topbar" id="nav" role="banner">
   <nav class="w topbar-in" aria-label="Main navigation">
-    <a href="#top" class="brand" aria-label="Parrot Replay home"><img src="logo.png" alt="" width="26" height="26">Parrot Replay</a>
+    <a href="/" class="brand" aria-label="Parrot Replay home"><img src="logo.png" alt="" width="26" height="26">Parrot Replay</a>
     <div class="spacer"></div>
     <div class="topnav" id="topnav">
-      <a href="#about">About</a>
       <a href="#interface">Interface</a>
       <a href="#howitworks">How It Works</a>
       <a href="#setup">Setup</a>
@@ -1002,7 +1031,7 @@ img{display:block;max-width:100%}
 </section>
 
 <!-- ═══ WHAT IS ═══ -->
-<section id="about" class="sec sec-alt" aria-label="What is Parrot Replay">
+<section class="sec sec-alt" aria-label="What is Parrot Replay">
   <div class="w">
     <div class="what-grid">
       <div data-r>
@@ -1260,7 +1289,7 @@ img{display:block;max-width:100%}
       <p class="sec-kicker">Pricing</p>
       <h2 id="pricing-heading">Simple <span class="accent">transparent</span> pricing</h2>
       <p>One-time purchase. Choose your term. Upgrade to PRO anytime.</p>
-<div style="margin-top:48px;"><span style="font-size:.82rem;color:var(--t2);font-style:italic;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 20px;box-shadow:inset 0 1px 0 rgba(255,255,255,.03);">Audio routing powered by VB-Audio C+D (<span style="color: rgba(255,255,255,0.9);">$5 one-time</span>, purchased separately)</span></div>
+<div style="margin-top:48px;"><span style="display:inline-block;font-size:.82rem;color:var(--t2);font-style:italic;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 20px;line-height:1.5;text-wrap:balance;max-width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.03);">Audio routing powered by VB-Audio C+D (<span style="color: rgba(255,255,255,0.9);white-space:nowrap;">$5 one-time</span>, purchased separately)</span></div>
     </div>
 
     <div class="tier-bar tier-bar--std" data-r><span class="emoji"><img src="standard_license.png" alt="" width="32" height="32" loading="lazy" decoding="async"></span><div><h3>Standard License</h3><p>Everything you need to get started · 3 profiles included</p></div></div>
@@ -1328,7 +1357,7 @@ img{display:block;max-width:100%}
         <span class="dl-pill"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Version 1.0.0</span>
         <span class="dl-pill"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3-Day Free Trial</span>
       </div>
-      <a href="https://downloads.parrotreplay.com/Parrot_Replay_Setup_1.0.0.exe" class="cta cta-main">
+      <a href="https://parrotreplay.com/downloads/ParrotReplay-Setup.exe" class="cta cta-main">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         Download for Windows
       </a>
@@ -1427,7 +1456,6 @@ window.addEventListener('scroll',()=>nv.classList.toggle('pin',scrollY>50),{pass
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
   const href=a.getAttribute('href');
   if(href==='#'||href==='#!')return;
-  if(href==='#top'){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});return;}
   const t=document.querySelector(href);
   if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
 }));
