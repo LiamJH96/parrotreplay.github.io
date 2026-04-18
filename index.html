@@ -178,36 +178,6 @@ body::after{
 }
 ::selection{background:var(--g);color:var(--bg)}
 
-/* Custom scrollbar — energy bar style */
-html{scrollbar-color:rgba(0,240,130,.4) rgba(255,255,255,.02)}
-@supports (-moz-appearance:none){
-  html{scrollbar-width:thin}
-}
-::-webkit-scrollbar{width:14px;height:14px}
-::-webkit-scrollbar-track{
-  background:
-    linear-gradient(90deg,transparent calc(50% - 0.5px),rgba(255,255,255,.04) calc(50% - 0.5px),rgba(255,255,255,.04) calc(50% + 0.5px),transparent calc(50% + 0.5px)),
-    rgba(255,255,255,.015);
-}
-::-webkit-scrollbar-thumb{
-  background:
-    linear-gradient(90deg,var(--g) 0,var(--g) 2px,rgba(0,240,130,.3) 2px,rgba(0,240,130,.2) 100%);
-  border-radius:4px;
-  box-shadow:0 0 8px rgba(0,240,130,.25),inset 1px 0 0 rgba(57,255,20,.5);
-  transition:background .25s ease,box-shadow .25s ease;
-}
-::-webkit-scrollbar-thumb:hover{
-  background:
-    linear-gradient(90deg,var(--g) 0,var(--g) 2px,rgba(0,240,130,.5) 2px,rgba(0,240,130,.35) 100%);
-  box-shadow:0 0 14px rgba(0,240,130,.5),inset 1px 0 0 rgba(57,255,20,.8);
-}
-::-webkit-scrollbar-thumb:active{
-  background:
-    linear-gradient(90deg,var(--g) 0,var(--g) 2px,rgba(0,240,130,.7) 2px,rgba(0,240,130,.5) 100%);
-  box-shadow:0 0 20px rgba(0,240,130,.7),inset 1px 0 0 rgba(57,255,20,1);
-}
-::-webkit-scrollbar-corner{background:var(--bg)}
-
 /* Global focus-visible polish */
 a:focus-visible,button:focus-visible{outline:2px solid var(--g);outline-offset:3px;border-radius:6px}
 
