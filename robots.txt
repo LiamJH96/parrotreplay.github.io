@@ -1,0 +1,8 @@
+# Parrot Replay - Robots.txt
+
+# Allow all crawlers full access
+User-agent: *
+Allow: /
+Disallow: /downloads/
+
+Sitemap: https://parrotreplay.com/sitemap.xml
