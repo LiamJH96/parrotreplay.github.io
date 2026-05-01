@@ -461,6 +461,8 @@ img{display:block;max-width:100%}
 .mode-affiliate{color:var(--t3);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
 .mode-affiliate:hover{color:var(--g)}
 .mode-disclaimer{text-align:center;color:var(--t3);font-size:.75rem;margin-top:20px;opacity:.7}
+@media(max-width:640px){
+  .mode-cards{grid-template-columns:1fr}
   .mode-card{padding:28px 24px}
   .mode-head{margin-bottom:36px}
 }
@@ -576,6 +578,7 @@ img{display:block;max-width:100%}
 .su ul{list-style:none;padding:0;margin:6px 0 4px;display:flex;flex-direction:column;gap:5px}
 .su ul li{color:var(--t2);font-size:.85rem;line-height:1.5;padding-left:14px;position:relative}
 .su ul li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--g);opacity:.7}
+.setup-note{text-align:center;color:var(--t3);font-size:.8rem;margin-top:20px;opacity:.8}
 .su ul li span{color:var(--g);font-weight:600}
 .su ul li:has(a)::before{top:50%;transform:translateY(-50%)}
 .su .note{font-size:.85rem;color:var(--t2);opacity:1;margin-top:10px}
@@ -1438,10 +1441,11 @@ img{display:block;max-width:100%}
     </div>
     <div class="setup-list">
       <div class="su" data-r><div class="su-n">1</div><div><h3>Install</h3><p>Run the installer. The audio driver comes with it. Restart your PC once when prompted.</p><a href="#download">Download Parrot Replay</a></div></div>
-      <div class="su" data-r><div class="su-n">2</div><div><h3>Pick Your Devices</h3><p>In your game or voice app, select:</p><ul><li>Microphone: <span>CABLE Output (VB-Audio Virtual Cable)</span></li><li>Output: <span>Your headset or speakers</span></li></ul><p class="note">A+B keeps voice separate for cleaner replays. Setup is guided in the app.</p></div></div>
+      <div class="su" data-r><div class="su-n">2</div><div><h3>Pick Your Devices</h3><p>In your game or voice app, select:</p><ul><li>Microphone: <span>CABLE Output (VB-Audio Virtual Cable)</span></li><li>Output: <span>Your headset or speakers</span></li></ul></div></div>
       <div class="su" data-r><div class="su-n">3</div><div><h3>Enter Your Key</h3><p>Paste your license key into the app. No account needed.<br>Includes a 3-day free trial.</p></div></div>
       <div class="su" data-r><div class="su-n">4</div><div><h3>Start Capturing</h3><p>Turn on the engine. Press your hotkey when something's worth keeping.</p></div></div>
     </div>
+    <p class="setup-note" data-r>A+B keeps voice separate for cleaner replays. Setup is guided in the app.</p>
   </div>
 </section>
 
