@@ -174,7 +174,7 @@
   --g:#00f082;--g2:#00d873;--gg:rgba(0,240,130,.3);
   --bg:#0a0a0a;--bg2:#111111;--card:#141414;
   --b1:#1c1c24;--b2:#2a2a34;
-  --t1:#f4f4f6;--t2:#94949e;--t3:#58585f;
+  --t1:#f4f4f6;--t2:#a8a8b2;--t3:#78787f;
   --pro1:#c850c0;--pro2:#4158d0;--pro3:#43e8d8;
 }
 html{scroll-behavior:smooth}
@@ -356,7 +356,7 @@ img{display:block;max-width:100%}
 .what-point{display:flex;gap:16px;align-items:flex-start}
 .what-point-icon{width:36px;height:36px;border-radius:10px;background:rgba(0,240,130,.07);border:1px solid rgba(0,240,130,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--g);transition:background .3s ease,border-color .3s ease,box-shadow .3s ease}
 .what-point:hover .what-point-icon{background:rgba(0,240,130,.12);border-color:rgba(0,240,130,.25);box-shadow:0 0 16px rgba(0,240,130,.15)}
-.what-point-text h4{font-size:.95rem;font-weight:800;color:var(--t1);margin-bottom:5px}
+.what-point-text h3{font-size:.95rem;font-weight:800;color:var(--t1);margin-bottom:5px}
 .what-point-text p{font-size:.84rem;color:var(--t2);line-height:1.65}
 .what-visual{position:relative;display:flex;flex-direction:column;gap:16px}
 .what-card{background:var(--card);border:1px solid var(--b1);border-radius:14px;padding:20px 22px;transition:border-color .35s ease,transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
@@ -492,7 +492,7 @@ img{display:block;max-width:100%}
 
 .mode-affiliate{color:var(--t3);text-decoration:underline;text-underline-offset:2px;transition:color .2s}
 .mode-affiliate:hover{color:var(--g)}
-.mode-disclaimer{text-align:center;color:var(--t3);font-size:.75rem;margin-top:20px;opacity:.7}
+.mode-disclaimer{text-align:center;color:var(--t3);font-size:.75rem;margin-top:20px}
 @media(max-width:640px){
   .mode-cards{grid-template-columns:1fr}
   .mode-card{padding:28px 24px}
@@ -610,7 +610,7 @@ img{display:block;max-width:100%}
 .su ul{list-style:none;padding:0;margin:6px 0 4px;display:flex;flex-direction:column;gap:5px}
 .su ul li{color:var(--t2);font-size:.85rem;line-height:1.5;padding-left:14px;position:relative}
 .su ul li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--g);opacity:.7}
-.setup-note{text-align:center;color:var(--t3);font-size:.8rem;margin-top:20px;opacity:.8}
+.setup-note{text-align:center;color:var(--t3);font-size:.8rem;margin-top:20px}
 .su ul li span{color:var(--g);font-weight:600}
 .su ul li:has(a)::before{top:50%;transform:translateY(-50%)}
 .su .note{font-size:.85rem;color:var(--t2);opacity:1;margin-top:10px}
@@ -1193,7 +1193,7 @@ img{display:block;max-width:100%}
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div class="what-point-text">
-              <h4>React after it happens</h4>
+              <h3>React after it happens</h3>
               <p>The last few seconds are always ready. Hit the hotkey when it happens.</p>
             </div>
           </div>
@@ -1202,7 +1202,7 @@ img{display:block;max-width:100%}
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
             </div>
             <div class="what-point-text">
-              <h4>The whole lobby hears it</h4>
+              <h3>The whole lobby hears it</h3>
               <p>Clips play straight back into voice chat.</p>
             </div>
           </div>
@@ -1211,7 +1211,7 @@ img{display:block;max-width:100%}
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <div class="what-point-text">
-              <h4>Just your keyboard</h4>
+              <h3>Just your keyboard</h3>
               <p>No extra hardware. No complicated setup. Works straight from your keyboard.</p>
             </div>
           </div>
@@ -1527,19 +1527,19 @@ img{display:block;max-width:100%}
         <div class="pc-dur">1 Year</div><div class="pc-save">&nbsp;</div>
         <div class="pc-price">$19.99</div><div class="pc-was"></div>
         <ul class="pc-ul"><li>Instant replay capture</li><li>Real-time audio effects</li><li>Trim clips in seconds</li><li>3 profiles for different setups</li></ul>
-        <a href="https://buy.stripe.com/fZu8wPe83h22cnoeXCf3a08" class="pc-buy">Purchase</a>
+        <a href="https://buy.stripe.com/fZu8wPe83h22cnoeXCf3a08" class="pc-buy" aria-label="Purchase Standard License — 1 Year">Purchase</a>
       </div>
       <div class="pc pc--pop">
         <div class="pc-dur">2 Years</div><div class="pc-save">Save 12%</div>
         <div class="pc-price">$34.99</div><div class="pc-was">$39.98</div>
         <ul class="pc-ul"><li>Instant replay capture</li><li>Real-time audio effects</li><li>Trim clips in seconds</li><li>3 profiles for different setups</li></ul>
-        <a href="https://buy.stripe.com/6oUeVde839zA9bceXCf3a0e" class="pc-buy">Purchase</a>
+        <a href="https://buy.stripe.com/6oUeVde839zA9bceXCf3a0e" class="pc-buy" aria-label="Purchase Standard License — 2 Years">Purchase</a>
       </div>
       <div class="pc">
         <div class="pc-dur">3 Years</div><div class="pc-save">Save 17%</div>
         <div class="pc-price">$49.99</div><div class="pc-was">$59.97</div>
         <ul class="pc-ul"><li>Instant replay capture</li><li>Real-time audio effects</li><li>Trim clips in seconds</li><li>3 profiles for different setups</li></ul>
-        <a href="https://buy.stripe.com/7sY4gz6FB1341IK2aQf3a0a" class="pc-buy">Purchase</a>
+        <a href="https://buy.stripe.com/7sY4gz6FB1341IK2aQf3a0a" class="pc-buy" aria-label="Purchase Standard License — 3 Years">Purchase</a>
       </div>
     </div>
 
@@ -1550,7 +1550,7 @@ img{display:block;max-width:100%}
           <div class="pc-dur">1 Year</div><div class="pc-save">&nbsp;</div>
           <div class="pc-price pro-gradient">$24.99</div><div class="pc-was"></div>
           <ul class="pc-ul pc-ul--pro"><li>Everything in Standard</li><li>9 profiles for more clips and setups</li><li>Export your full setup</li><li>Import it anytime</li></ul>
-          <a href="https://buy.stripe.com/fZuaEX0hd3bccno7vaf3a07" class="pro-buy"><span>Purchase</span></a>
+          <a href="https://buy.stripe.com/fZuaEX0hd3bccno7vaf3a07" class="pro-buy" aria-label="Purchase PRO License — 1 Year"><span>Purchase</span></a>
         </div>
       </div>
       <div class="pro-wrap">
@@ -1558,7 +1558,7 @@ img{display:block;max-width:100%}
           <div class="pc-dur">2 Years</div><div class="pc-save pro-gradient">Save 20%</div>
           <div class="pc-price pro-gradient">$39.99</div><div class="pc-was">$49.98</div>
           <ul class="pc-ul pc-ul--pro"><li>Everything in Standard</li><li>9 profiles for more clips and setups</li><li>Export your full setup</li><li>Import it anytime</li></ul>
-          <a href="https://buy.stripe.com/aFa8wP4xt5jkdrsbLqf3a0b" class="pro-buy"><span>Purchase</span></a>
+          <a href="https://buy.stripe.com/aFa8wP4xt5jkdrsbLqf3a0b" class="pro-buy" aria-label="Purchase PRO License — 2 Years"><span>Purchase</span></a>
         </div>
       </div>
       <div class="pro-wrap">
@@ -1566,7 +1566,7 @@ img{display:block;max-width:100%}
           <div class="pc-dur">3 Years</div><div class="pc-save pro-gradient">Save 27%</div>
           <div class="pc-price pro-gradient">$54.99</div><div class="pc-was">$74.97</div>
           <ul class="pc-ul pc-ul--pro"><li>Everything in Standard</li><li>9 profiles for more clips and setups</li><li>Export your full setup</li><li>Import it anytime</li></ul>
-          <a href="https://buy.stripe.com/28E4gz4xtaDEbjk2aQf3a0c" class="pro-buy"><span>Purchase</span></a>
+          <a href="https://buy.stripe.com/28E4gz4xtaDEbjk2aQf3a0c" class="pro-buy" aria-label="Purchase PRO License — 3 Years"><span>Purchase</span></a>
         </div>
       </div>
     </div>
