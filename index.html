@@ -380,6 +380,11 @@ img{display:block;max-width:100%}
 .demo-embed-wrap:hover{box-shadow:0 0 0 1px rgba(0,240,130,.24),0 40px 100px rgba(0,0,0,.5),0 0 80px rgba(0,240,130,.16),0 0 160px rgba(0,240,130,.07);transform:translateY(-4px)}
 .demo-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
 .demo-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.yt-facade{position:absolute;top:0;left:0;width:100%;height:100%;cursor:pointer;background:#000}
+.yt-facade img{width:100%;height:100%;object-fit:cover;display:block;opacity:.9;transition:opacity .3s}
+.yt-facade:hover img{opacity:1}
+.yt-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transition:transform .2s ease,filter .2s ease;filter:drop-shadow(0 0 12px rgba(0,240,130,.4))}
+.yt-facade:hover .yt-play-btn{transform:translate(-50%,-50%) scale(1.1);filter:drop-shadow(0 0 20px rgba(0,240,130,.7))}
 .demo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto}
 @media(max-width:720px){.demo-cards{grid-template-columns:repeat(3,1fr);gap:8px}.demo-cards .if-card{padding:12px 10px}.demo-cards .if-card h3{font-size:.75rem;margin-bottom:4px}.demo-cards .if-card p{font-size:.68rem;line-height:1.45}}
 @media(max-width:600px){.demo-embed-wrap{border-radius:12px}}
@@ -1156,7 +1161,12 @@ img{display:block;max-width:100%}
     </div>
     <div class="demo-embed-wrap" data-r>
       <div class="demo-ratio">
-        <iframe src="https://www.youtube-nocookie.com/embed/22fOqUZeLiU" title="Parrot Replay Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        <div class="yt-facade" id="yt-facade" onclick="loadYT()" role="button" tabindex="0" aria-label="Play Parrot Replay demo video" onkeydown="if(event.key==='Enter'||event.key===' ')loadYT()">
+          <img src="https://i.ytimg.com/vi/22fOqUZeLiU/maxresdefault.jpg" alt="Parrot Replay Demo Video" loading="lazy" decoding="async">
+          <div class="yt-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#ff0000"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+          </div>
+        </div>
       </div>
     </div>
     <div class="demo-cards" data-r>
@@ -1971,6 +1981,9 @@ document.querySelectorAll('.fq-q').forEach(q=>{
 // Scroll reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}}),{threshold:.06,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('[data-r]').forEach(el=>io.observe(el));
+
+// YouTube facade loader
+function loadYT(){const f=document.getElementById('yt-facade');if(!f)return;const wrap=f.parentNode;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/22fOqUZeLiU?autoplay=1';iframe.title='Parrot Replay Demo';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:none';f.remove();wrap.appendChild(iframe);}
 </script>
 </body>
 </html>
