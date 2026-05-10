@@ -351,6 +351,22 @@ img{display:block;max-width:100%}
 .what-card-highlight{border-color:rgba(0,240,130,.28);background:linear-gradient(135deg,rgba(0,240,130,.05),var(--card));box-shadow:0 0 0 1px rgba(0,240,130,.08),0 4px 24px rgba(0,240,130,.06)}
 @media(max-width:860px){.what-grid{grid-template-columns:1fr;gap:48px}}
 .sec-line{border-top:1px solid var(--b1)}
+
+/* ═══════════════════════════════════════════
+   DEMO VIDEO
+   ═══════════════════════════════════════════ */
+.demo-section{padding:100px 0;background:var(--bg);border-top:1px solid var(--b1)}
+.demo-head{text-align:center;margin-bottom:52px}
+.demo-head h2{font-family:'DM Sans',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:800;letter-spacing:-.03em;margin-bottom:8px;line-height:1.1}
+.demo-head p{color:var(--t2);font-size:1rem;max-width:560px;margin:0 auto;line-height:1.75}
+.demo-embed-wrap{position:relative;max-width:900px;margin:0 auto 48px;border-radius:18px;overflow:hidden;border:1px solid rgba(0,240,130,.18);box-shadow:0 0 0 1px rgba(0,240,130,.06),0 32px 80px rgba(0,0,0,.45),0 0 60px rgba(0,240,130,.1),0 0 120px rgba(0,240,130,.04);transition:box-shadow .4s ease,transform .4s cubic-bezier(.22,1,.36,1)}
+.demo-embed-wrap:hover{box-shadow:0 0 0 1px rgba(0,240,130,.24),0 40px 100px rgba(0,0,0,.5),0 0 80px rgba(0,240,130,.16),0 0 160px rgba(0,240,130,.07);transform:translateY(-4px)}
+.demo-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.demo-ratio iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.demo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:0 auto}
+@media(max-width:720px){.demo-cards{grid-template-columns:repeat(3,1fr);gap:10px}}
+@media(max-width:480px){.demo-cards{gap:8px}.demo-cards .if-card{padding:14px 12px}.demo-cards .if-card h3{font-size:.8rem}.demo-cards .if-card p{font-size:.72rem}}
+@media(max-width:600px){.demo-embed-wrap{border-radius:12px}}
 .sec-head{margin-bottom:56px}
 .sec-head.center{text-align:center}
 .sec-kicker{
@@ -1108,6 +1124,36 @@ img{display:block;max-width:100%}
       <div class="hero-img-area" data-r>
         <div class="hero-wave" id="hero-wave" aria-hidden="true"></div>
         <img src="logo-full.png" alt="" fetchpriority="high" decoding="async" width="380" height="380" aria-hidden="true">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DEMO VIDEO ═══ -->
+<section id="demo" class="demo-section" aria-labelledby="demo-heading">
+  <div class="w">
+    <div class="demo-head sec-head center" data-r>
+      <p class="sec-kicker">Watch The Demo</p>
+      <h2 id="demo-heading">See Parrot Replay In Action</h2>
+      <p>Watch real gameplay reactions, instant voice replay demos, Discord examples, and a quick overview of how Parrot Replay works.</p>
+    </div>
+    <div class="demo-embed-wrap" data-r>
+      <div class="demo-ratio">
+        <iframe src="https://www.youtube-nocookie.com/embed/22fOqUZeLiU" title="Parrot Replay Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="demo-cards" data-r>
+      <div class="if-card">
+        <h3>Instant Replay</h3>
+        <p>Capture recent voice chat and replay it instantly using simple hotkeys.</p>
+      </div>
+      <div class="if-card">
+        <h3>No Complex Setup</h3>
+        <p>No Voicemeeter, Stream Deck, or complicated routing required.</p>
+      </div>
+      <div class="if-card">
+        <h3>Built For Reactions</h3>
+        <p>Designed for funny in-game moments, Discord demos, and content creation.</p>
       </div>
     </div>
   </div>
