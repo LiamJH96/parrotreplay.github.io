@@ -1833,18 +1833,26 @@ document.querySelectorAll('.fq-q').forEach(q=>{
     var w = canvas.parentElement.clientWidth;
     if(!imgs[0]) return;
     var ratio = imgs[0].naturalHeight / imgs[0].naturalWidth;
-    canvas.width  = w;
-    canvas.height = Math.round(w * ratio);
+    var dpr = window.devicePixelRatio || 1;
+    canvas.style.width  = w + 'px';
+    canvas.style.height = Math.round(w * ratio) + 'px';
+    canvas.width  = Math.round(w * dpr);
+    canvas.height = Math.round(w * ratio * dpr);
+    ctx.scale(dpr, dpr);
   }
 
   function drawImg(img, alpha){
+    var cssW = parseInt(canvas.style.width);
+    var cssH = parseInt(canvas.style.height);
     ctx.globalAlpha = alpha;
-    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, cssW, cssH);
     ctx.globalAlpha = 1;
   }
 
   function drawStatic(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    var cssW = parseInt(canvas.style.width);
+    var cssH = parseInt(canvas.style.height);
+    ctx.clearRect(0,0,cssW,cssH);
     drawImg(imgs[current], OPACITY);
   }
 
@@ -1859,8 +1867,8 @@ document.querySelectorAll('.fq-q').forEach(q=>{
       // Ease in-out cubic
       var ease = p < 0.5 ? 4*p*p*p : 1 - Math.pow(-2*p+2,3)/2;
 
-      var w = canvas.width;
-      var h = canvas.height;
+      var w = parseInt(canvas.style.width);
+      var h = parseInt(canvas.style.height);
       var edge = Math.round(ease * w);
 
       ctx.clearRect(0, 0, w, h);
