@@ -1145,7 +1145,10 @@ img{display:block;max-width:100%}
       </div>
       <div class="hero-img-area" data-r>
         <div class="hero-wave" id="hero-wave" aria-hidden="true"></div>
-        <img src="logo-full.webp" srcset="logo-full-small.webp 360w, logo-full.webp 380w" sizes="(max-width:600px) 180px, 380px" alt="" fetchpriority="high" decoding="async" width="380" height="380" aria-hidden="true">
+        <picture>
+          <source media="(max-width:600px)" srcset="logo-full-small.webp">
+          <img src="logo-full.webp" alt="" fetchpriority="high" decoding="async" width="380" height="380" aria-hidden="true">
+        </picture>
       </div>
     </div>
   </div>
