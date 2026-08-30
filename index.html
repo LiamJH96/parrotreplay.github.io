@@ -176,6 +176,7 @@
   --b1:#1c1c24;--b2:#2a2a34;
   --t1:#f4f4f6;--t2:#a8a8b2;--t3:#78787f;
   --pro1:#c850c0;--pro2:#4158d0;--pro3:#43e8d8;
+  --promo-h:42px;
 }
 html{scroll-behavior:smooth}
 body{
@@ -185,6 +186,7 @@ body{
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
   overflow-x:hidden;
+  padding-top:var(--promo-h);
 }
 /* Film grain overlay */
 body::after{
@@ -218,9 +220,57 @@ img{display:block;max-width:100%}
 /* ═══════════════════════════════════════════
    NAVIGATION
    ═══════════════════════════════════════════ */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:500;transition:background .3s ease,border-color .3s ease,backdrop-filter .3s ease}
+.topbar{position:fixed;top:var(--promo-h);left:0;right:0;z-index:500;transition:background .3s ease,border-color .3s ease,backdrop-filter .3s ease}
 .topbar.pin{background:rgba(8,8,10,.78);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid var(--b1);box-shadow:0 1px 0 rgba(255,255,255,.02),0 8px 24px rgba(0,0,0,.25)}
 .topbar-in{display:flex;align-items:center;height:64px;gap:8px}
+
+/* Promo banner */
+.promo-bar{
+  position:fixed;top:0;left:0;right:0;z-index:600;
+  height:var(--promo-h);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  background:#0a0a0a;
+  border-bottom:1px solid var(--b1);
+}
+.promo-track{
+  position:relative;
+  display:flex;
+  align-items:center;
+  white-space:nowrap;
+  animation:promo-scroll linear infinite;
+  gap:14px;
+  padding-left:14px;
+}
+.promo-chip{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 22px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.01em;
+  color:var(--t1);
+  background:linear-gradient(100deg,#0f1f16,#0a0a0a 55%);
+  clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);
+  flex-shrink:0;
+}
+.promo-chip b{
+  color:#000;
+  background:var(--g);
+  font-weight:800;
+  padding:2px 8px;
+  clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);
+}
+@keyframes promo-scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+@media (prefers-reduced-motion: reduce){
+  .promo-track{animation:none}
+}
 .brand{display:flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--g);white-space:nowrap;transition:filter .25s ease}
 .brand:hover{filter:brightness(1.15)}
 .brand img{width:26px;height:26px;filter:drop-shadow(0 0 8px var(--gg));transition:filter .3s ease}
@@ -668,6 +718,10 @@ img{display:block;max-width:100%}
 .pc-save{text-align:center;font-size:.78rem;font-weight:600;color:var(--g);margin-bottom:4px;min-height:17px}
 .pc-price{text-align:center;font-family:'DM Sans',sans-serif;font-size:2.6rem;font-weight:800;color:var(--g);letter-spacing:-.03em;line-height:1;margin-bottom:6px}
 .pc-was{text-align:center;font-size:.78rem;color:var(--t3);text-decoration:line-through;margin-bottom:20px;min-height:15px}
+.pc-fall{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;margin:0 0 4px}
+.pc-fall .pc-orig{font-size:.85rem;color:var(--t3);text-decoration:line-through}
+.pc-fall b{color:var(--bg);background:var(--g);font-weight:800;font-size:.65rem;padding:2px 9px;letter-spacing:.02em;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+.pc-fall b.pro-badge{background:linear-gradient(90deg,#ff64c8,#ffc864,#64ffff,#6496ff,#ff64ff);background-size:200% 100%;animation:iri 3s ease-in-out infinite;color:#0a0a0a}
 .pc-ul{list-style:none;flex:1;margin-bottom:24px}
 .pc{display:flex;flex-direction:column}
 .pc-ul li{padding:5px 0;font-size:.875rem;color:var(--t2);display:flex;align-items:center;gap:10px}
@@ -1095,6 +1149,11 @@ img{display:block;max-width:100%}
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ═══ PROMO BANNER ═══ -->
+<div class="promo-bar">
+  <div class="promo-track" id="promo-track"></div>
+</div>
 
 <!-- ═══ NAV ═══ -->
 <header class="topbar" id="nav" role="banner">
@@ -1538,19 +1597,22 @@ img{display:block;max-width:100%}
     <div class="pc-grid" data-r>
       <div class="pc">
         <div class="pc-dur">1 Year</div><div class="pc-save">&nbsp;</div>
-        <div class="pc-price">$19.99</div><div class="pc-was"></div>
+        <div class="pc-fall"><span class="pc-orig">$19.99</span><b>FALL20</b></div>
+        <div class="pc-price">$15.99</div><div class="pc-was"></div>
         <ul class="pc-ul"><li>Instant replay capture</li><li>Real-time audio effects</li><li>Trim clips in seconds</li><li>3 profiles for different setups</li></ul>
         <a href="https://buy.stripe.com/fZu8wPe83h22cnoeXCf3a08" class="pc-buy" aria-label="Purchase Standard License — 1 Year">Purchase</a>
       </div>
       <div class="pc pc--pop">
         <div class="pc-dur">2 Years</div><div class="pc-save">Save 12%</div>
-        <div class="pc-price">$34.99</div><div class="pc-was">$39.98</div>
+        <div class="pc-fall"><span class="pc-orig">$34.99</span><b>FALL20</b></div>
+        <div class="pc-price">$27.99</div><div class="pc-was"></div>
         <ul class="pc-ul"><li>Instant replay capture</li><li>Real-time audio effects</li><li>Trim clips in seconds</li><li>3 profiles for different setups</li></ul>
         <a href="https://buy.stripe.com/6oUeVde839zA9bceXCf3a0e" class="pc-buy" aria-label="Purchase Standard License — 2 Years">Purchase</a>
       </div>
       <div class="pc">
         <div class="pc-dur">3 Years</div><div class="pc-save">Save 17%</div>
-        <div class="pc-price">$49.99</div><div class="pc-was">$59.97</div>
+        <div class="pc-fall"><span class="pc-orig">$49.99</span><b>FALL20</b></div>
+        <div class="pc-price">$39.99</div><div class="pc-was"></div>
         <ul class="pc-ul"><li>Instant replay capture</li><li>Real-time audio effects</li><li>Trim clips in seconds</li><li>3 profiles for different setups</li></ul>
         <a href="https://buy.stripe.com/7sY4gz6FB1341IK2aQf3a0a" class="pc-buy" aria-label="Purchase Standard License — 3 Years">Purchase</a>
       </div>
@@ -1561,7 +1623,8 @@ img{display:block;max-width:100%}
       <div class="pro-wrap">
         <div class="pro-inner">
           <div class="pc-dur">1 Year</div><div class="pc-save">&nbsp;</div>
-          <div class="pc-price pro-gradient">$24.99</div><div class="pc-was"></div>
+          <div class="pc-fall"><span class="pc-orig">$24.99</span><b class="pro-badge">FALL20</b></div>
+          <div class="pc-price pro-gradient">$19.99</div><div class="pc-was"></div>
           <ul class="pc-ul pc-ul--pro"><li>Everything in Standard</li><li>9 profiles for more clips and setups</li><li>Export your full setup</li><li>Import it anytime</li></ul>
           <a href="https://buy.stripe.com/fZuaEX0hd3bccno7vaf3a07" class="pro-buy" aria-label="Purchase PRO License — 1 Year"><span>Purchase</span></a>
         </div>
@@ -1569,7 +1632,8 @@ img{display:block;max-width:100%}
       <div class="pro-wrap">
         <div class="pro-inner">
           <div class="pc-dur">2 Years</div><div class="pc-save pro-gradient">Save 20%</div>
-          <div class="pc-price pro-gradient">$39.99</div><div class="pc-was">$49.98</div>
+          <div class="pc-fall"><span class="pc-orig">$39.99</span><b class="pro-badge">FALL20</b></div>
+          <div class="pc-price pro-gradient">$31.99</div><div class="pc-was"></div>
           <ul class="pc-ul pc-ul--pro"><li>Everything in Standard</li><li>9 profiles for more clips and setups</li><li>Export your full setup</li><li>Import it anytime</li></ul>
           <a href="https://buy.stripe.com/aFa8wP4xt5jkdrsbLqf3a0b" class="pro-buy" aria-label="Purchase PRO License — 2 Years"><span>Purchase</span></a>
         </div>
@@ -1577,7 +1641,8 @@ img{display:block;max-width:100%}
       <div class="pro-wrap">
         <div class="pro-inner">
           <div class="pc-dur">3 Years</div><div class="pc-save pro-gradient">Save 27%</div>
-          <div class="pc-price pro-gradient">$54.99</div><div class="pc-was">$74.97</div>
+          <div class="pc-fall"><span class="pc-orig">$54.99</span><b class="pro-badge">FALL20</b></div>
+          <div class="pc-price pro-gradient">$43.99</div><div class="pc-was"></div>
           <ul class="pc-ul pc-ul--pro"><li>Everything in Standard</li><li>9 profiles for more clips and setups</li><li>Export your full setup</li><li>Import it anytime</li></ul>
           <a href="https://buy.stripe.com/28E4gz4xtaDEbjk2aQf3a0c" class="pro-buy" aria-label="Purchase PRO License — 3 Years"><span>Purchase</span></a>
         </div>
@@ -1996,6 +2061,35 @@ document.querySelectorAll('[data-r]').forEach(el=>io.observe(el));
 
 // YouTube facade loader
 function loadYT(){const f=document.getElementById('yt-facade');if(!f)return;const wrap=f.parentNode;const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/22fOqUZeLiU?autoplay=1';iframe.title='Parrot Replay Demo';iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;iframe.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;border:none';f.remove();wrap.appendChild(iframe);}
+
+// Promo banner scroll
+(function(){
+  var track = document.getElementById('promo-track');
+  if(!track) return;
+  var chipHTML = '<div class="promo-chip">Use code <b>FALL20</b> for 20% off all licenses, ends October 1st</div>';
+  var full = '';
+  for(var i=0;i<10;i++){ full += chipHTML; }
+  track.innerHTML = full;
+
+  function getSpeed(){
+    return window.innerWidth <= 700 ? 90 : 60;
+  }
+  function setSpeed(){
+    var halfWidth = track.scrollWidth;
+    // Duplicate exactly once measured, so both halves are pixel-identical
+    if(track.children.length <= 10){
+      track.innerHTML = full + full;
+    }
+    var duration = halfWidth / getSpeed();
+    track.style.animationDuration = duration + 's';
+  }
+  setSpeed();
+  window.addEventListener('resize', setSpeed);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(setSpeed);
+  }
+  window.addEventListener('load', setSpeed);
+})();
 </script>
 </body>
 </html>
