@@ -1401,6 +1401,22 @@ h1,h2,h3{font-family:var(--sans);font-weight:800;letter-spacing:-.02em;line-heig
   [data-r],.hero-logo-wrap,.hero-ctas,.hero-noword,.hero-meta-item,.hl,.demo-screen-wrap{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}
 }
 </style>
+
+<style id="capture-mode-license-alignment-fix">
+@media (max-width:900px){
+  /* Share every content row across the two swipe cards, including routing dividers. */
+  .mode-cards{grid-template-rows:repeat(7,auto)}
+  .mode-card{display:grid;grid-row:span 7;grid-template-rows:subgrid;row-gap:0}
+  .mode-routing{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+  .mode-facts{align-self:start;align-items:center}
+  /* Let the full description use the banner width below the icon and title. */
+  .tier-bar{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:10px;row-gap:2px}
+  .tier-bar>.emoji{grid-column:1;grid-row:1;align-self:center}
+  .tier-bar>div{display:contents}
+  .tier-bar h3{grid-column:2;grid-row:1;margin-bottom:0}
+  .tier-bar p{grid-column:1 / -1;grid-row:2;min-width:0;white-space:nowrap;font-size:clamp(.65rem,2.9vw,.78rem)}
+}
+</style>
 </head>
 <body id="top">
 <a href="#main" class="skip-link">Skip to content</a>
